@@ -1,6 +1,6 @@
 # livrariarequalificar
 Projeto do curso Requalificar - Grupo 8
 
-##Requisitos
+## Requisitos
 
-##Diagrama *use case* 
+## Diagrama *use case* 
