@@ -9,8 +9,7 @@ Projeto do curso Requalificar - Grupo 8
 disponíveis na livraria Requalificar.
 - Um livro é caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa. 
 - Um livro pode ser escrito por vários autores que são respetivamente caracterizados por um nome, uma data de nascimento e um email.
-- Uma editora é caracterizada por um nome e uma morada.
-- Um autor pode apenas pertencer a uma editora.
+- Uma editora é caracterizada por um nome e uma morada. Um autor pode apenas pertencer a uma editora.
 - A página inicial do sistema deve apresentar ao cliente uma navbar (com o seu carrinho de compras e o seu perfil) e todos os livros da livraria numa vista reduzida, onde só é apresentado a imagem, o título e o preço do livro.
 - Deve ser dado a opção ao cliente de organizar os livros por preço crescente e preço decrescente.
 - Deve ser também dado a possibilidade de filtrar os livros por editora, por autor e por data de lançamento.
