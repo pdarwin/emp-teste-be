@@ -1,4 +1,4 @@
-# livrariarequalificar
+# Projeto Livraria Requalificar
 Projeto do curso Requalificar - Grupo 8
 
 ## Requisitos
