@@ -1,5 +1,5 @@
 # Projeto Livraria Requalificar
-Projeto do curso Requalificar - Grupo 8
+Projeto do laboratório de programação, curso Requalificar - Grupo 8
 
 ## Requisitos
 - O sistema deve suportar dois tipos de utilizador, os clientese os funcionários da livraria.
