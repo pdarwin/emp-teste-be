@@ -18,8 +18,7 @@ __Grupo 8__
 
 3 - Os clientes devem ser capazes fazer o registo pela aplicação, e consequentemente de fazer a sua autenticação através do uso de uma palavra-passe.
 
-4 - Após a autenticação, o cliente deve ter acesso à loja e consequentemente conseguir ver todos os livros
-disponíveis na Livraria Requalificar.
+4 - Após a autenticação, o cliente deve ter acesso à loja e consequentemente conseguir ver todos os livros disponíveis na Livraria Requalificar.
 
 5 - Um livro deve ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa.
 
@@ -42,9 +41,11 @@ disponíveis na Livraria Requalificar.
 14 - Após efetuado o pagamento, deverá ser apresentada uma mensagem: Compra efetuada com sucesso!
 
 15 - Caso a compra efetuada pelo cliente seja superior a 50 euros, o mesmo deverá receber um cupão de 5% de desconto. 
+
 Caso seja superior a 100 euros, deverá receber um cupão de 15% de desconto.
 
 16 - Ao clicar no perfil (navbar), o cliente poderá ver todas as compras efetuadas. 
+
 Deverá também ser capaz de ver todos os cupões que possuí no momento, incluído os que já foram usados.
 
 17 - No perfil, deverá ser também dado a opção de alterar a palavra-passe, a morada e o email (dados do cliente).
@@ -54,6 +55,7 @@ Deverá também ser capaz de ver todos os cupões que possuí no momento, inclu�
 19 - Um funcionário é caracterizado por um nome, uma data de nascimento e um nickname gerado automaticamente a partir do nome.
 
 20 - Após a autenticação do funcionário, o mesmo deverá encontrar a página inicial com todos os livros da livraria e uma navbar onde será permitido adicionar uma editora, um autor e um livro. 
+
 Sendo possível aplicar as mesmas técnicas de filtragem e organização que o cliente.
 
 21 - Ao selecionar um livro, deverá ser aberta uma nova página onde o funcionário pode alterar todas as características da obra.
