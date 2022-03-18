@@ -13,6 +13,12 @@ __Grupo 8__
 
 ## Requisitos
 1 - O sistema deve suportar dois tipos de utilizador: Clientes e os Funcionários da livraria.
+- Cliente faz login com email
+- Funcionário faz login com username
+- Imagem guardada ena base de dados (base 64)
+- Password mínimo 8 carateres, c/ maiúscula, minúscula e número
+- Deve fazer validação de email
+- Username do funcionário calculado a partir da primeira letra do nome + sobrenome + inteiro consecutivo ao último usado, caso exista
 
 2 - Os clientes devem ser caracterizados por um nome, um email, uma morada e uma data de nascimento.
 
