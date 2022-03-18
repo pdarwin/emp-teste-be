@@ -6,9 +6,9 @@ __Curso Requalificar +Digital Java__
 
 __Grupo 8__
 
-João Rocha
+- João Rocha
 
-Paulo Santos Perneta
+- Paulo Santos Perneta
 
 
 ## Requisitos
