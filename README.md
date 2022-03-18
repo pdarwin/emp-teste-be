@@ -75,7 +75,7 @@ Sendo possível aplicar as mesmas técnicas de filtragem e organização que o c
 
 ## Diagrama *Use Case*
 
-__Primeira idealização__
+__Primeira Idealização__
 
 ![Livraria Requalificar (Passo 1)](https://user-images.githubusercontent.com/97111949/159070763-908da997-fc3b-4c92-acae-32a8bbbd1f87.png)
 
