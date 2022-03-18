@@ -1,8 +1,8 @@
 # Projeto Livraria Requalificar
 
-__Projeto Laboratório de Programação__
-
 __Curso Requalificar +Digital Java__
+
+__Laboratório de Programação__
 
 __Grupo 8__
 
