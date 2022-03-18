@@ -90,7 +90,7 @@
 -titulo String
 -ISBN String
 -preco double
--quantidade int
+-stock int
 -data_lancamento Date
 -num_paginas int
 -sinopse String
@@ -242,7 +242,7 @@ m2=</panel_attributes>
       <w>150</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>Venda
+    <panel_attributes>Compra
 --
 total double</panel_attributes>
     <additional_attributes/>

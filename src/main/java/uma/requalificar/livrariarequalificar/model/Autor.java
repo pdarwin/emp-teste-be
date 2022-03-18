@@ -1,19 +1,25 @@
 package uma.requalificar.livrariarequalificar.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Funcionario")
-public class Funcionario
-{
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
+@Table(name = "Autor")
+public class Autor
+{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
@@ -23,9 +29,15 @@ public class Funcionario
 
 	private Date data_nascimento;
 	
-	private String username;
+	private String email;
 	
-	private String password;
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name = "editora_id", nullable = false)
+	private Editora editora;
+	
+	@OneToMany(mappedBy = "autor")
+	private List<Livro> livros;
 
 	/**
 	 * @return the nome
@@ -60,6 +72,22 @@ public class Funcionario
 	}
 
 	/**
+	 * @return the email
+	 */
+	public String getEmail()
+	{
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+
+	/**
 	 * @return the id
 	 */
 	public Long getId()
@@ -68,37 +96,37 @@ public class Funcionario
 	}
 
 	/**
-	 * @return the username
+	 * @return the editora
 	 */
-	public String getUsername()
+	public Editora getEditora()
 	{
-		return username;
+		return editora;
 	}
 
 	/**
-	 * @param username the username to set
+	 * @param editora the editora to set
 	 */
-	public void setUsername(String username)
+	public void setEditora(Editora editora)
 	{
-		this.username = username;
+		this.editora = editora;
 	}
 
 	/**
-	 * @return the password
+	 * @return the livros
 	 */
-	public String getPassword()
+	public List<Livro> getLivros()
 	{
-		return password;
+		return livros;
 	}
 
 	/**
-	 * @param password the password to set
+	 * @param livros the livros to set
 	 */
-	public void setPassword(String password)
+	public void setLivros(List<Livro> livros)
 	{
-		this.password = password;
+		this.livros = livros;
 	}
+
 	
 	
-
 }
