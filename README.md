@@ -3,6 +3,7 @@ Projeto do laboratório de programação, curso Requalificar - Grupo 8
 
 ## Requisitos
 1 - O sistema deve suportar dois tipos de utilizador: Clientes e os Funcionários da livraria.
+
 2 - Os clientes devem ser caracterizados por um nome, um email, uma morada e uma data de nascimento.
 3 - Os clientes devem ser capazes fazer o registo pela aplicação, e consequentemente de fazer a sua autenticação através do uso de uma palavra-passe.
 4 - Após a autenticação, o cliente deve ter acesso à loja e consequentemente conseguir ver todos os livros
