@@ -75,11 +75,11 @@ Sendo possível aplicar as mesmas técnicas de filtragem e organização que o c
 
 ## Diagrama *Use Case*
 
-                                                            __Primeira Idealização__
+__Primeira Idealização__
 
 ![Livraria Requalificar (Passo 1)](https://user-images.githubusercontent.com/97111949/159070763-908da997-fc3b-4c92-acae-32a8bbbd1f87.png)
 
-                                                        __Proposta Final de Use Case Model__
 
+__Proposta Final de Use Case Model__
 
 ![Diagrama Use Case - Livraria Requalificar](https://user-images.githubusercontent.com/97111949/159070863-3d46bc65-0bea-4f45-b30b-3247f2cd9db0.png)
