@@ -5,8 +5,11 @@ __Projeto Laboratório de Programação__
 __Curso Requalificar +Digital Java__
 
 __Grupo 8__
+
 João Rocha
+
 Paulo Santos Perneta
+
 
 ## Requisitos
 1 - O sistema deve suportar dois tipos de utilizador: Clientes e os Funcionários da livraria.
