@@ -3,14 +3,22 @@ Projeto do laboratório de programação, curso Requalificar - Grupo 8
 
 ## Requisitos
 1 - O sistema deve suportar dois tipos de utilizador: Clientes e os Funcionários da livraria.
+
 2 - Os clientes devem ser caracterizados por um nome, um email, uma morada e uma data de nascimento.
+
 3 - Os clientes devem ser capazes fazer o registo pela aplicação, e consequentemente de fazer a sua autenticação através do uso de uma palavra-passe.
+
 4 - Após a autenticação, o cliente deve ter acesso à loja e consequentemente conseguir ver todos os livros
 disponíveis na Livraria Requalificar.
-5 - Um livro deve ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa. 
+
+5 - Um livro deve ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa.
+
 6 - Um livro pode ser escrito por vários autores que são respetivamente caracterizados por um nome, uma data de nascimento e um email.
+
 7 - Uma editora é caracterizada por um nome e uma morada. Um autor pode apenas pertencer a uma editora.
+
 8 - A página inicial do sistema deve apresentar ao cliente uma navbar (com o seu carrinho de compras e o seu perfil) e todos os livros da livraria numa vista reduzida, onde só é apresentada a imagem, o título e o preço do livro.
+
 9 - Deve ser dado a opção ao cliente de organizar os livros por preço crescente e preço decrescente.
 10 - Deve ser também dado a possibilidade de filtrar os livros por editora, por autor e por data de lançamento.
 11 - Ao clicar no livro, uma nova página deverá ser apresentada onde o cliente poderá ver todos os aspetos do livro, incluído a opção de adicioná-lo ao carrinho de compras, caso o livro esteja disponível em stock.
