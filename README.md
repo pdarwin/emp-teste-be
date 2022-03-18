@@ -1,10 +1,12 @@
 # Projeto Livraria Requalificar
 
-Projeto Laboratório de Programação
+__Projeto Laboratório de Programação__
 
-Curso Requalificar +Digital Java
+__Curso Requalificar +Digital Java__
 
-Grupo 8
+__Grupo 8__
+João Rocha
+Paulo Santos Perneta
 
 ## Requisitos
 1 - O sistema deve suportar dois tipos de utilizador: Clientes e os Funcionários da livraria.
