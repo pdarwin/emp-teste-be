@@ -1,6 +1,9 @@
 # Projeto Livraria Requalificar
+
 Projeto Laboratório de Programação
+
 Curso Requalificar +Digital Java
+
 Grupo 8
 
 ## Requisitos
