@@ -240,9 +240,11 @@ m2=</panel_attributes>
       <x>710</x>
       <y>800</y>
       <w>150</w>
-      <h>30</h>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>Venda</panel_attributes>
+    <panel_attributes>Venda
+--
+total double</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
