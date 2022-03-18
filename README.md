@@ -1,6 +1,6 @@
 # Projeto Livraria Requalificar
 
-__Curso Requalificar +Digital Java__
+__Requalificar +Digital Java__
 
 __Laboratório de Programação__
 
