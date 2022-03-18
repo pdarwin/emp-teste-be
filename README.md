@@ -73,7 +73,13 @@ Sendo possível aplicar as mesmas técnicas de filtragem e organização que o c
 24 - Ambos os utilizadores devem ter a possibilidade de efetuar logout ao sistema.
 
 
-## Diagrama *Use Case* 
-![Livraria Requalificar (Passo 1)](https://user-images.githubusercontent.com/97111949/158906302-c1afd7ca-67f8-4356-83f5-6ef992690fc3.png)
+## Diagrama *Use Case*
 
-![Livraria Requalificar](https://user-images.githubusercontent.com/97111949/158906706-85759758-a3c7-4b48-863d-cedf00ec0939.png)
+__Primeira idealização__
+
+![Livraria Requalificar (Passo 1)](https://user-images.githubusercontent.com/97111949/159070763-908da997-fc3b-4c92-acae-32a8bbbd1f87.png)
+
+__Proposta Final de Use Case Model__
+
+
+![Diagrama Use Case - Livraria Requalificar](https://user-images.githubusercontent.com/97111949/159070863-3d46bc65-0bea-4f45-b30b-3247f2cd9db0.png)
