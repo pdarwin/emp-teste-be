@@ -13,29 +13,29 @@ __Grupo 8__
 
 ## Requisitos
 
-1.1.	O sistema deve permitir o registo pela aplicação de dois utilizadores: Cliente e Funcionário;
+__1.1.__	O sistema deve permitir o registo pela aplicação de dois utilizadores: Cliente e Funcionário;
 
-1.2.	Após o registo, ambos os utilizadores deveram receber uma validação por email;
+__1.2.__	Após o registo, ambos os utilizadores deveram receber uma validação por email;
 
-1.3.	O sistema deve permitir ao cliente fazer login através do endereço eletrónico (email), juntamente com a password;
+__1.3.__	O sistema deve permitir ao cliente fazer login através do endereço eletrónico (email), juntamente com a password;
 
-1.4.	O sistema deve permitir ao funcionário fazer login através do endereço eletrónico (email), ou username (nome de utilizador), juntamente com a password;
+__1.4.__	O sistema deve permitir ao funcionário fazer login através do endereço eletrónico (email), ou username (nome de utilizador), juntamente com a password;
 
-1.5.	O username do funcionário, deverá ser calculado a partir da primeira letra do nome, mais sobrenome em conjunção com a adição do número inteiro consecutivo ao último usado, caso exista;
+__1.5.__	O username do funcionário, deverá ser calculado a partir da primeira letra do nome, mais sobrenome em conjunção com a adição do número inteiro consecutivo ao último usado, caso exista;
 
-1.6.	A password, em ambos os casos de utilização, deverá ter um número mínimo de 8 caracteres;
+__1.6.__	A password, em ambos os casos de utilização, deverá ter um número mínimo de 8 caracteres;
 
-1.7.	A password deverá possuir pelo menos uma letra maiúscula, uma letra minúscula e um número;
+__1.7.__	A password deverá possuir pelo menos uma letra maiúscula, uma letra minúscula e um número;
 
-1.8.	Após a autenticação (login), ambos os utilizadores devem ter acesso à Loja (página inicial do sistema) e todos os seus livros disponíveis;
+__1.8.__	Após a autenticação (login), ambos os utilizadores devem ter acesso à Loja (página inicial do sistema) e todos os seus livros disponíveis;
 
-1.9.	Os livros da página inicial deverão estar expostos numa vista reduzida;
+__1.9.__	Os livros da página inicial deverão estar expostos numa vista reduzida;
 
-1.10.	Todos os livros expostos na página inicial do sistema, deveram ser apresentados apenas pela imagem, título e preço;
+__1.10.__	Todos os livros expostos na página inicial do sistema, deveram ser apresentados apenas pela imagem, título e preço;
 
-1.11.	Os utilizadores devem poder organizar os livros por preço crescente;
+__1.11.__	Os utilizadores devem poder organizar os livros por preço crescente;
 
-1.12.	E, adicionalmente, por ordem também decrescente;
+__1.12.__	E, adicionalmente, por ordem também decrescente;
 
 1.13.	Para além disso, ambos os utilizadores poderão filtrar os livros (em vista reduzida), por editora;
 
@@ -134,5 +134,3 @@ __Proposta Final de Use Case Model__
 __Proposta Final de Use Case Model (Generalização entre os Atores)__
 
 ![Diagrama Use Case - Livraria Requalificar 'Final'](https://user-images.githubusercontent.com/97111949/159177808-f80d9981-eac1-4de2-9444-7057d6287141.png)
-
-
