@@ -37,87 +37,87 @@ __1.11.__	Os utilizadores devem poder organizar os livros por preço crescente;
 
 __1.12.__	E, adicionalmente, por ordem também decrescente;
 
-1.13.	Para além disso, ambos os utilizadores poderão filtrar os livros (em vista reduzida), por editora;
+__1.13.__	Para além disso, ambos os utilizadores poderão filtrar os livros (em vista reduzida), por editora;
 
-1.14.	A filtragem / ordenação por autor também é uma opção;
+__1.14.__	A filtragem / ordenação por autor também é uma opção;
 
-1.15.	E por fim, a opção de filtrar por data de lançamento também é uma possibilidade;
+__1.15.__	E por fim, a opção de filtrar por data de lançamento também é uma possibilidade;
 
-1.16.	Ao clicar sobre um livro selecionado, uma nova página deverá ser apresentada perante o cliente, onde constará todos os detalhes da obra;
+__1.16.__	Ao clicar sobre um livro selecionado, uma nova página deverá ser apresentada perante o cliente, onde constará todos os detalhes da obra;
 
-1.17.	Um livro deverá ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa;
+__1.17.__	Um livro deverá ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa;
 
-1.18.	Se um funcionário clicar sobre o livro selecionado, a nova página aberta (gerada) deve dar a possibilidade de alterar todas as características da obra escolhida;
+__1.18.__	Se um funcionário clicar sobre o livro selecionado, a nova página aberta (gerada) deve dar a possibilidade de alterar todas as características da obra escolhida;
 
-1.19.	Os funcionários também podem, na mesma página, obter estatísticas sobre as vendas do livro;
+__1.19.__	Os funcionários também podem, na mesma página, obter estatísticas sobre as vendas do livro;
 
-1.20.	Nomeadamente sobre os gastos de utilizadores;
+__1.20.__	Nomeadamente sobre os gastos de utilizadores;
 
-1.21.	Com possibilidade de filtrar / ordenar por ordem crescente;
+__1.21.__	Com possibilidade de filtrar / ordenar por ordem crescente;
 
-1.22.	E inclusive, por ordem também decrescente;
+__1.22.__	E inclusive, por ordem também decrescente;
 
-1.23.	Quais as cópias / edições do livro que venderam mais;
+__1.23.__	Quais as cópias / edições do livro que venderam mais;
 
-1.24.	Quais foram os livros mais rentáveis;
+__1.24.__	Quais foram os livros mais rentáveis;
 
 NOUTRA PÁGINA?
 
-1.25.	Quais foram os livros menos rentáveis;
+__1.25.__	Quais foram os livros menos rentáveis;
 
-1.26.	No caso do cliente, a possibilidade de adicionar o livro ao seu carrinho de compras, através da mesma página de detalhes, deve ser uma opção;
+__1.26.__	No caso do cliente, a possibilidade de adicionar o livro ao seu carrinho de compras, através da mesma página de detalhes, deve ser uma opção;
 
-1.27.	Caso a obra se encontra disponível em stock;
+__1.27.__	Caso a obra se encontra disponível em stock;
 
-1.28.	Se não for esse o caso, deverá constar nos detalhes literários a seguinte mensagem: Sem stock de momento!
+__1.28.__	Se não for esse o caso, deverá constar nos detalhes literários a seguinte mensagem: Sem stock de momento!
 
-1.29.	Caso o stock do livro indicado esteja para breve, a seguinte mensagem deve constar nos detalhes (características) do livro: Stock para breve!
+__1.29.__	Caso o stock do livro indicado esteja para breve, a seguinte mensagem deve constar nos detalhes (características) do livro: Stock para breve!
 
-1.30.	Na página inicial do sistema, o sistema deve apresentar ao cliente e funcionário uma navbar (barra de navegação);
+__1.30.__	Na página inicial do sistema, o sistema deve apresentar ao cliente e funcionário uma navbar (barra de navegação);
 
-1.31.	Ambos os utilizadores poderão aceder aos dados de perfil de forma a alterá-los, pela navbar (barra de navegação);
+__1.31.__	Ambos os utilizadores poderão aceder aos dados de perfil de forma a alterá-los, pela navbar (barra de navegação);
 
-1.32.	O cliente pode alterar no perfil a palavra-passe, a morada e o seu email;
+__1.32.__	O cliente pode alterar no perfil a palavra-passe, a morada e o seu email;
 
-1.33.	Por sua vez o funcionário, pode aceder aos seus dados de perfil: nome, data de nascimento e nickname (username) gerado automaticamente;
+__1.33.__	Por sua vez o funcionário, pode aceder aos seus dados de perfil: nome, data de nascimento e nickname (username) gerado automaticamente;
 
 POSSIBILIDADE DE ALTERAÇÃO?
 
-1.34.	No caso do cliente, ao clicar no perfil deve ser possível visualizar todas as compras efetuadas;
+__1.34.__	No caso do cliente, ao clicar no perfil deve ser possível visualizar todas as compras efetuadas;
 
-1.35.	Inclusive, deverá também ser apresentada a informação dos cupões disponíveis no momento;
+__1.35.__	Inclusive, deverá também ser apresentada a informação dos cupões disponíveis no momento;
 
-1.36.	E, adicionalmente, a informação dos cupões que já foram usados;
+__1.36.__	E, adicionalmente, a informação dos cupões que já foram usados;
 
-1.37.	Através da navbar, somente o cliente tem a opção adicional de visualizar o carrinho de compras;
+__1.37.__	Através da navbar, somente o cliente tem a opção adicional de visualizar o carrinho de compras;
 
-1.38.	Ao clicar no carrinho, o cliente poderá fazer uma pré-visualização do total do carrinho a pagar;
+__1.38.__	Ao clicar no carrinho, o cliente poderá fazer uma pré-visualização do total do carrinho a pagar;
 
-1.39.	Podendo aumentar ou diminuir a quantidade de livros, já existentes no carrinho;
+__1.39.__	Podendo aumentar ou diminuir a quantidade de livros, já existentes no carrinho;
 
-1.40.	Também é possível proceder diretamente para o pagamento;
+__1.40.__	Também é possível proceder diretamente para o pagamento;
 
-1.41.	Na secção (página) de efetuar o pagamento, o cliente pode adicionar num campo, opcionalmente, um cupão de desconto que possa ter;
+__1.41.__	Na secção (página) de efetuar o pagamento, o cliente pode adicionar num campo, opcionalmente, um cupão de desconto que possa ter;
 
-1.42.	Só é possível adicionar no máximo um cupão de desconto;
+__1.42.__	Só é possível adicionar no máximo um cupão de desconto;
 
-1.43.	Após o pagamento ser efetuado, deverá ser apresentada a seguinte mensagem: Compra efetuada com sucesso!
+__1.43.__	Após o pagamento ser efetuado, deverá ser apresentada a seguinte mensagem: Compra efetuada com sucesso!
 
-1.44.	Caso a compra em questão seja superior a 50 euros, o cliente deverá receber um cupão de 5% de desconto;
+__1.44.__	Caso a compra em questão seja superior a 50 euros, o cliente deverá receber um cupão de 5% de desconto;
 
-1.45.	Caso seja superior a 100 euros, o cupão de oferta passa a ser de 15% de desconto;
+__1.45.__	Caso seja superior a 100 euros, o cupão de oferta passa a ser de 15% de desconto;
 
-1.46.	No caso do funcionário, a navbar tem a possibilidade extra de adicionar uma editora, um autor e um livro;
+__1.46.__	No caso do funcionário, a navbar tem a possibilidade extra de adicionar uma editora, um autor e um livro;
 
-1.47.	Uma editora é caracterizada por um nome e uma morada;
+__1.47.__	Uma editora é caracterizada por um nome e uma morada;
 
-1.48.	Um autor é caracterizado por um nome, uma data de nascimento e um email;
+__1.48.__	Um autor é caracterizado por um nome, uma data de nascimento e um email;
 
-1.49.	Um autor pode pertencer apenas a uma editora;
+__1.49.__	Um autor pode pertencer apenas a uma editora;
 
-1.50.	E um livro, por sua vez, pode ter sido escrito por vários autores;
+__1.50.__	E um livro, por sua vez, pode ter sido escrito por vários autores;
 
-1.51.	Ambos os utilizadores devem ter a possibilidade de terminar sessão (logout).
+__1.51.__	Ambos os utilizadores devem ter a possibilidade de terminar sessão (logout).
 
 
 ## Diagrama *Use Case*
