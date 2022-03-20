@@ -12,65 +12,112 @@ __Grupo 8__
 
 
 ## Requisitos
-1 - O sistema deve suportar dois tipos de utilizador: Clientes e os Funcionários da livraria.
-- Cliente faz login com email
-- Funcionário faz login com username
-- Imagem guardada ena base de dados (base 64)
-- Password mínimo 8 carateres, c/ maiúscula, minúscula e número
-- Deve fazer validação de email
-- Username do funcionário calculado a partir da primeira letra do nome + sobrenome + inteiro consecutivo ao último usado, caso exista
 
-2 - Os clientes devem ser caracterizados por um nome, um email, uma morada e uma data de nascimento.
+1.1.	O sistema deve permitir o registo pela aplicação de dois utilizadores: Cliente e Funcionário;
 
-3 - Os clientes devem ser capazes fazer o registo pela aplicação, e consequentemente de fazer a sua autenticação através do uso de uma palavra-passe.
+1.2.	Após o registo, ambos os utilizadores deveram receber uma validação por email;
 
-4 - Após a autenticação, o cliente deve ter acesso à loja e consequentemente conseguir ver todos os livros disponíveis na Livraria Requalificar.
+1.3.	O sistema deve permitir ao cliente fazer login através do endereço eletrónico (email), juntamente com a password;
 
-5 - Um livro deve ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa.
+1.4.	O sistema deve permitir ao funcionário fazer login através do endereço eletrónico (email), ou username (nome de utilizador), juntamente com a password;
 
-6 - Um livro pode ser escrito por vários autores que são respetivamente caracterizados por um nome, uma data de nascimento e um email.
+1.5.	O username do funcionário, deverá ser calculado a partir da primeira letra do nome, mais sobrenome em conjunção com a adição do número inteiro consecutivo ao último usado, caso exista;
 
-7 - Uma editora é caracterizada por um nome e uma morada. Um autor pode apenas pertencer a uma editora.
+1.6.	A password, em ambos os casos de utilização, deverá ter um número mínimo de 8 caracteres;
 
-8 - A página inicial do sistema deve apresentar ao cliente uma navbar (com o seu carrinho de compras e o seu perfil) e todos os livros da livraria numa vista reduzida, onde só é apresentada a imagem, o título e o preço do livro.
+1.7.	A password deverá possuir pelo menos uma letra maiúscula, uma letra minúscula e um número;
 
-9 - Deve ser dado a opção ao cliente de organizar os livros por preço crescente e preço decrescente.
+1.8.	Após a autenticação (login), ambos os utilizadores devem ter acesso à Loja (página inicial do sistema) e todos os seus livros disponíveis;
 
-10 - Deve ser também dado a possibilidade de filtrar os livros por editora, por autor e por data de lançamento.
+1.9.	Os livros da página inicial deverão estar expostos numa vista reduzida;
 
-11 - Ao clicar no livro, uma nova página deverá ser apresentada onde o cliente poderá ver todos os aspetos do livro, incluído a opção de adicioná-lo ao carrinho de compras, caso o livro esteja disponível em stock.
+1.10.	Todos os livros expostos na página inicial do sistema, deveram ser apresentados apenas pela imagem, título e preço;
 
-12 - Ao clicar no carrinho de compras, o cliente poderá fazer uma pré-visualização do total do carrinho, podendo aumentar ou diminuir a quantidade de livros já existentes e podendo também prosseguir para o pagamento.
+1.11.	Os utilizadores devem poder organizar os livros por preço crescente;
 
-13 - Ao efetuar o pagamento, deverá ser opcionalmente possível adicionar no máximo um cupão de desconto. 
+1.12.	E, adicionalmente, por ordem também decrescente;
 
-14 - Após efetuado o pagamento, deverá ser apresentada uma mensagem: Compra efetuada com sucesso!
+1.13.	Para além disso, ambos os utilizadores poderão filtrar os livros (em vista reduzida), por editora;
 
-15 - Caso a compra efetuada pelo cliente seja superior a 50 euros, o mesmo deverá receber um cupão de 5% de desconto. 
+1.14.	A filtragem / ordenação por autor também é uma opção;
 
-Caso seja superior a 100 euros, deverá receber um cupão de 15% de desconto.
+1.15.	E por fim, a opção de filtrar por data de lançamento também é uma possibilidade;
 
-16 - Ao clicar no perfil (navbar), o cliente poderá ver todas as compras efetuadas. 
+1.16.	Ao clicar sobre um livro selecionado, uma nova página deverá ser apresentada perante o cliente, onde constará todos os detalhes da obra;
 
-Deverá também ser capaz de ver todos os cupões que possuí no momento, incluído os que já foram usados.
+1.17.	Um livro deverá ser caracterizado por um autor, um título, um ISBN, um preço, uma quantidade em stock, uma editora, uma data de lançamento, um número de páginas, uma sinopse, uma edição e uma imagem de capa;
 
-17 - No perfil, deverá ser também dado a opção de alterar a palavra-passe, a morada e o email (dados do cliente).
+1.18.	Se um funcionário clicar sobre o livro selecionado, a nova página aberta (gerada) deve dar a possibilidade de alterar todas as características da obra escolhida;
 
-18 - Os funcionários da livraria devem também fazer o seu registo.
+1.19.	Os funcionários também podem, na mesma página, obter estatísticas sobre as vendas do livro;
 
-19 - Um funcionário é caracterizado por um nome, uma data de nascimento e um nickname gerado automaticamente a partir do nome.
+1.20.	Nomeadamente sobre os gastos de utilizadores;
 
-20 - Após a autenticação do funcionário, o mesmo deverá encontrar a página inicial com todos os livros da livraria e uma navbar onde será permitido adicionar uma editora, um autor e um livro. 
+1.21.	Com possibilidade de filtrar / ordenar por ordem crescente;
 
-Sendo possível aplicar as mesmas técnicas de filtragem e organização que o cliente.
+1.22.	E inclusive, por ordem também decrescente;
 
-21 - Ao selecionar um livro, deverá ser aberta uma nova página onde o funcionário pode alterar todas as características da obra.
+1.23.	Quais as cópias / edições do livro que venderam mais;
 
-22 - Adicionalmente, os funcionários também conseguem obter estatísticas sobre as vendas, nomeadamente sobre os gastos dos utilizadores.
+1.24.	Quais foram os livros mais rentáveis;
 
-23 - Deverá ser possível ordenar as vendas por ordem crescente e decrescente, os livros que venderam mais e/ou as cópias (livros) que foram mais e menos rentáveis.
+NOUTRA PÁGINA?
 
-24 - Ambos os utilizadores devem ter a possibilidade de efetuar logout ao sistema.
+1.25.	Quais foram os livros menos rentáveis;
+
+1.26.	No caso do cliente, a possibilidade de adicionar o livro ao seu carrinho de compras, através da mesma página de detalhes, deve ser uma opção;
+
+1.27.	Caso a obra se encontra disponível em stock;
+
+1.28.	Se não for esse o caso, deverá constar nos detalhes literários a seguinte mensagem: Sem stock de momento!
+
+1.29.	Caso o stock do livro indicado esteja para breve, a seguinte mensagem deve constar nos detalhes (características) do livro: Stock para breve!
+
+1.30.	Na página inicial do sistema, o sistema deve apresentar ao cliente e funcionário uma navbar (barra de navegação);
+
+1.31.	Ambos os utilizadores poderão aceder aos dados de perfil de forma a alterá-los, pela navbar (barra de navegação);
+
+1.32.	O cliente pode alterar no perfil a palavra-passe, a morada e o seu email;
+
+1.33.	Por sua vez o funcionário, pode aceder aos seus dados de perfil: nome, data de nascimento e nickname (username) gerado automaticamente;
+
+POSSIBILIDADE DE ALTERAÇÃO?
+
+1.34.	No caso do cliente, ao clicar no perfil deve ser possível visualizar todas as compras efetuadas;
+
+1.35.	Inclusive, deverá também ser apresentada a informação dos cupões disponíveis no momento;
+
+1.36.	E, adicionalmente, a informação dos cupões que já foram usados;
+
+1.37.	Através da navbar, somente o cliente tem a opção adicional de visualizar o carrinho de compras;
+
+1.38.	Ao clicar no carrinho, o cliente poderá fazer uma pré-visualização do total do carrinho a pagar;
+
+1.39.	Podendo aumentar ou diminuir a quantidade de livros, já existentes no carrinho;
+
+1.40.	Também é possível proceder diretamente para o pagamento;
+
+1.41.	Na secção (página) de efetuar o pagamento, o cliente pode adicionar num campo, opcionalmente, um cupão de desconto que possa ter;
+
+1.42.	Só é possível adicionar no máximo um cupão de desconto;
+
+1.43.	Após o pagamento ser efetuado, deverá ser apresentada a seguinte mensagem: Compra efetuada com sucesso!
+
+1.44.	Caso a compra em questão seja superior a 50 euros, o cliente deverá receber um cupão de 5% de desconto;
+
+1.45.	Caso seja superior a 100 euros, o cupão de oferta passa a ser de 15% de desconto;
+
+1.46.	No caso do funcionário, a navbar tem a possibilidade extra de adicionar uma editora, um autor e um livro;
+
+1.47.	Uma editora é caracterizada por um nome e uma morada;
+
+1.48.	Um autor é caracterizado por um nome, uma data de nascimento e um email;
+
+1.49.	Um autor pode pertencer apenas a uma editora;
+
+1.50.	E um livro, por sua vez, pode ter sido escrito por vários autores;
+
+1.51.	Ambos os utilizadores devem ter a possibilidade de terminar sessão (logout).
 
 
 ## Diagrama *Use Case*
