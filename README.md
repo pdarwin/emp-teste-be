@@ -16,6 +16,7 @@ __Grupo 8__
 __1.1.__	O sistema deve permitir o registo pela aplicação de dois utilizadores: Cliente e Funcionário;
 
 
+
 __1.2.__	Após o registo, ambos os utilizadores deveram receber uma validação por email;
 
 
