@@ -152,22 +152,25 @@ __1.44.__	Caso a compra em questão seja superior a 50 euros, o cliente deverá 
 __1.45.__	Caso seja superior a 100 euros, o cupão de oferta passa a ser de 15% de desconto;
 
 
-__1.46.__	No caso do funcionário, a navbar tem a possibilidade extra de adicionar uma editora, um autor e um livro;
+__1.46.__	Os cupões de oferta devem ser enviados para o email do cliente;
 
 
-__1.47.__	Uma editora é caracterizada por um nome e uma morada;
+__1.47.__	No caso do funcionário, a navbar tem a possibilidade extra de adicionar uma editora, um autor e um livro;
 
 
-__1.48.__	Um autor é caracterizado por um nome, uma data de nascimento e um email;
+__1.48.__	Uma editora é caracterizada por um nome e uma morada;
 
 
-__1.49.__	Um autor pode pertencer apenas a uma editora;
+__1.49.__	Um autor é caracterizado por um nome, uma data de nascimento e um email;
 
 
-__1.50.__	E um livro, por sua vez, pode ter sido escrito por vários autores;
+__1.50.__	Um autor pode pertencer apenas a uma editora;
 
 
-__1.51.__	Ambos os utilizadores devem ter a possibilidade de terminar sessão (logout).
+__1.51.__	E um livro, por sua vez, pode ter sido escrito por vários autores;
+
+
+__1.52.__	Ambos os utilizadores devem ter a possibilidade de terminar sessão (logout).
 
 
 
