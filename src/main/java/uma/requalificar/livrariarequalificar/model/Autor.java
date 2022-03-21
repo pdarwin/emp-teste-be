@@ -1,5 +1,6 @@
 package uma.requalificar.livrariarequalificar.model;
 
+
 import java.sql.Date;
 import java.util.List;
 
