@@ -182,11 +182,16 @@ __1.54.__	Ambos os utilizadores devem ter a possibilidade de terminar sessão (l
 
 ## Diagrama *Use Case*
 
-__Primeira Idealização__
+1.__Primeira Idealização__
 
 ![Livraria Requalificar (Passo 1)](https://user-images.githubusercontent.com/97111949/159070763-908da997-fc3b-4c92-acae-32a8bbbd1f87.png)
 
 
-__Proposta Final de Use Case Model (Generalização entre os Atores)__
+2.__Proposta de Use Case Model (Generalização entre os Atores)__
 
 ![Diagrama Use Case - Livraria Requalificar 'Final'](https://user-images.githubusercontent.com/97111949/159177808-f80d9981-eac1-4de2-9444-7057d6287141.png)
+
+
+3.__Proposta Final de Use Case Model__
+
+![Diagrama Use Case - Livraria Requalificar FIM](https://user-images.githubusercontent.com/97111949/159518517-9e143119-dd35-4719-8f24-8ca4e47d47c0.png)
