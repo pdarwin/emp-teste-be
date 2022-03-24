@@ -10,22 +10,24 @@ import uma.requalificar.livrariarequalificar.model.Cupao;
 import uma.requalificar.livrariarequalificar.repository.CupaoRepository;
 
 @Service
-public class CupaoService {
-
+public class CupaoService 
+{
 	private final CupaoRepository cupaoRepository;
 
+	
 	@Autowired
-	public CupaoService(CupaoRepository cupaoRepository)
+	public CupaoService (CupaoRepository cupaoRepository)
 	{
 		this.cupaoRepository = cupaoRepository;
 	}
 	
-	public List<Cupao> getCupoes()
+	public List<Cupao> getCupoes ()
 	{
-		List<Cupao> cupoes = new ArrayList<>();
-		cupaoRepository.findAll().forEach(cupoes::add);
+		List<Cupao> cupoes = new ArrayList<> ();
+		cupaoRepository.findAll ().forEach (cupoes::add);
 
 		return cupoes;
 	}
+
 	
 }

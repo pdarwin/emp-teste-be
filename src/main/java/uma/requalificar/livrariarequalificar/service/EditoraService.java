@@ -10,27 +10,30 @@ import uma.requalificar.livrariarequalificar.model.Editora;
 import uma.requalificar.livrariarequalificar.repository.EditoraRepository;
 
 @Service
-public class EditoraService {
-
+public class EditoraService 
+{
 	private final EditoraRepository editoraRepository;
 
+	
 	@Autowired
 	public EditoraService (EditoraRepository editoraRepository)
 	{
 		this.editoraRepository = editoraRepository;
 	}
 	
-	public List<Editora> getEditoras()
+	public List<Editora> getEditoras ()
 	{
-		List<Editora> editoras = new ArrayList<>();
-		editoraRepository.findAll().forEach(editoras::add);
+		List<Editora> editoras = new ArrayList<> ();
+		editoraRepository.findAll ().forEach (editoras::add);
 
 		return editoras;
 	}
 
-	public String addEditora(Object editora) {
+	public String addEditora (Object editora) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	
 }
