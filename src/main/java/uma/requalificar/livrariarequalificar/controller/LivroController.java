@@ -15,11 +15,13 @@ import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Livro;
 import uma.requalificar.livrariarequalificar.service.LivroService;
 
+
 @RestController
 @CrossOrigin
-public class LivroController {
-
+public class LivroController 
+{
 	private final LivroService livroService;
+
 	
 	@Autowired
 	public LivroController (LivroService livroService)
@@ -27,18 +29,20 @@ public class LivroController {
 		this.livroService = livroService;
 	}
 	
+	
     @GetMapping("/getLivros")
 	@CrossOrigin
-    public List<Livro> getLivros(){
+    public List<Livro> getLivros()
+    {
 		return livroService.getLivros();
     }
+   
     
     @PostMapping("/addLivro")
 	@CrossOrigin
 	public ResponseEntity<ListaResposta> addLivro(@RequestBody Livro livro)
 	{
-
-		ListaResposta sResponse = new ListaResposta();
+    	ListaResposta sResponse = new ListaResposta();
 
 		if (livro.getId() != null)
 		{
@@ -88,7 +92,8 @@ public class LivroController {
 		{
 			sResponse.addMsg(msg);
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
-		} else
+		} 
+		else
 		{
 			sResponse.setStatusOk(true);
 			sResponse.setLista(livroService.getLivros());
@@ -96,5 +101,6 @@ public class LivroController {
 		}
 
 	}
+  
     
 }

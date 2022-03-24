@@ -13,27 +13,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Editora;
-import uma.requalificar.livrariarequalificar.model.Livro;
 import uma.requalificar.livrariarequalificar.service.EditoraService;
+
 
 @RestController
 @CrossOrigin
-public class EditoraController {
-
+public class EditoraController 
+{
 	private final EditoraService editoraService;
-	private Object editora;
+
 	
 	@Autowired
 	public EditoraController (EditoraService editoraService)
 	{
 		this.editoraService = editoraService;
 	}
+
 	
     @GetMapping("/getEditoras")
 	@CrossOrigin
-    public List<Editora> getEditoras(){
+    public List<Editora> getEditoras()
+    {
 		return editoraService.getEditoras();
     }
+
     
     @PostMapping("/addEditora")
 	public ResponseEntity<ListaResposta> addEditora(@RequestBody Editora editora)
@@ -52,7 +55,6 @@ public class EditoraController {
 			sResponse.addMsg("Nome nulo.");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
 		}
-
 		
 		if ((editora.getMorada() == null))
 		{
@@ -61,22 +63,21 @@ public class EditoraController {
 		}
 
 		
-		}
-		
 		String msg = editoraService.addEditora(editora);
 
 		if (!msg.isBlank())
 		{
 			sResponse.addMsg(msg);
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
-		} else
+		} 
+		else
 		{
 			sResponse.setStatusOk(true);
-			sResponse.setLista(livroService.getLivros());
+			sResponse.setLista(editoraService.getEditoras());
 			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
 		}
 
 	}
+  
     
-}
 }

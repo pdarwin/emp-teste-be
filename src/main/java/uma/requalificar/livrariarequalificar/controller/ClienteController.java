@@ -15,11 +15,13 @@ import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Cliente;
 import uma.requalificar.livrariarequalificar.service.ClienteService;
 
+
 @RestController
 @CrossOrigin
-public class ClienteController {
-
+public class ClienteController 
+{
 	private final ClienteService clienteService;
+
 	
 	@Autowired
 	public ClienteController (ClienteService clienteService)
@@ -27,18 +29,20 @@ public class ClienteController {
 		this.clienteService = clienteService;
 	}
 	
+	
     @GetMapping("/getClientes")
 	@CrossOrigin
-    public List<Cliente> getClientes(){
+    public List<Cliente> getClientes()
+    {
 		return clienteService.getClientes();
     }
+    
     
     @PostMapping("/regCliente")
 	@CrossOrigin
 	public ResponseEntity<ListaResposta> regCliente(@RequestBody Cliente cliente)
 	{
-
-		ListaResposta sResponse = new ListaResposta();
+    	ListaResposta sResponse = new ListaResposta();
 
 		if (cliente.getId() != null)
 		{
@@ -70,13 +74,11 @@ public class ClienteController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
 		}
 
-		
 		if ((cliente.getData_nascimento() == null))
 		{
 			sResponse.addMsg("Data de nascimento nula.");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
 		}
-		
 		
 		String msg = clienteService.regCliente(cliente);
 
@@ -84,7 +86,8 @@ public class ClienteController {
 		{
 			sResponse.addMsg(msg);
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
-		} else
+		} 
+		else
 		{
 			sResponse.setStatusOk(true);
 			sResponse.setLista(clienteService.getClientes());

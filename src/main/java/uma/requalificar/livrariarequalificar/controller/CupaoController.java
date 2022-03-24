@@ -10,22 +10,27 @@ import org.springframework.web.bind.annotation.RestController;
 import uma.requalificar.livrariarequalificar.model.Cupao;
 import uma.requalificar.livrariarequalificar.service.CupaoService;
 
+
 @RestController
 @CrossOrigin
-public class CupaoController {
-
+public class CupaoController 
+{
 	private final CupaoService cupaoService;
+	
 	
 	@Autowired
 	public CupaoController (CupaoService cupaoService)
 	{
 		this.cupaoService = cupaoService;
 	}
+
 	
     @GetMapping("/getCupoes")
 	@CrossOrigin
-    public List<Cupao> getCupoes(){
+    public List<Cupao> getCupoes()
+    {
 		return cupaoService.getCupoes();
     }
+ 
     
 }
