@@ -69,7 +69,7 @@ public class AutorController {
 
 	}
     
-    @DeleteMapping("/deleteAutor/{id}")
+ /*   @DeleteMapping("/deleteAutor/{id}")
 	public ResponseEntity<SimpleResponse> removePessoa(@PathVariable String id)
 	{
 
@@ -87,6 +87,7 @@ public class AutorController {
 			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
 		}
 
-	}
+	} 
+*/
     
 }
