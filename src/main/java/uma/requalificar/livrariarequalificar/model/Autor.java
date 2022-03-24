@@ -44,7 +44,7 @@ public class Autor
 	
     @JsonIgnore
     @ManyToMany (mappedBy = "autores")
-    private List<Livro> livros = new ArrayList<>();
+    private List<Livro> livros = new ArrayList<> ();
 
     
 	/**

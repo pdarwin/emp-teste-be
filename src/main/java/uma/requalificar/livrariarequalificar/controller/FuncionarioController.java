@@ -25,11 +25,11 @@ public class FuncionarioController
 	}
 	
 	
-    @GetMapping("/getFuncionarios")
+    @GetMapping ("/getFuncionarios")
 	@CrossOrigin
-    public List<Funcionario> getFuncionarios()
+    public List<Funcionario> getFuncionarios ()
     {
-		return funcionarioService.getFuncionarios();
+		return funcionarioService.getFuncionarios ();
     }
  
     

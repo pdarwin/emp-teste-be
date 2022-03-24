@@ -30,68 +30,68 @@ public class ClienteController
 	}
 	
 	
-    @GetMapping("/getClientes")
+    @GetMapping ("/getClientes")
 	@CrossOrigin
-    public List<Cliente> getClientes()
+    public List<Cliente> getClientes ()
     {
-		return clienteService.getClientes();
+		return clienteService.getClientes ();
     }
     
     
-    @PostMapping("/regCliente")
+    @PostMapping ("/regCliente")
 	@CrossOrigin
-	public ResponseEntity<ListaResposta> regCliente(@RequestBody Cliente cliente)
+	public ResponseEntity<ListaResposta> regCliente (@RequestBody Cliente cliente)
 	{
-    	ListaResposta sResponse = new ListaResposta();
+    	ListaResposta sResponse = new ListaResposta ();
 
 		if (cliente.getId() != null)
 		{
-			sResponse.addMsg("Ao adicionar um cliente, o ID tem de ser nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Ao adicionar um cliente, o ID tem de ser nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((cliente.getNome() == null))
+		if ( (cliente.getNome () == null) )
 		{
-			sResponse.addMsg("Nome nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Nome nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 	
-		if ((cliente.getEmail() == null))
+		if ( (cliente.getEmail () == null) )
 		{
-			sResponse.addMsg("Email nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Email nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((cliente.getPassword() == null))
+		if ( (cliente.getPassword () == null) )
 		{
-			sResponse.addMsg("Password nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Password nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((cliente.getMorada() == null))
+		if ( (cliente.getMorada () == null) )
 		{
-			sResponse.addMsg("Morada nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Morada nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
-		if ((cliente.getData_nascimento() == null))
+		if ( (cliente.getData_nascimento () == null) )
 		{
-			sResponse.addMsg("Data de nascimento nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Data de nascimento nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		String msg = clienteService.regCliente(cliente);
+		String msg = clienteService.regCliente (cliente);
 
-		if (!msg.isBlank())
+		if (!msg.isBlank () )
 		{
-			sResponse.addMsg(msg);
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		} 
 		else
 		{
-			sResponse.setStatusOk(true);
-			sResponse.setLista(clienteService.getClientes());
-			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
+			sResponse.setStatusOk (true);
+			sResponse.setLista (clienteService.getClientes () );
+			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
 		}
 
 	}

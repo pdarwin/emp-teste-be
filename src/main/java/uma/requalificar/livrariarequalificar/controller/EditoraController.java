@@ -30,51 +30,51 @@ public class EditoraController
 	}
 
 	
-    @GetMapping("/getEditoras")
+    @GetMapping ("/getEditoras")
 	@CrossOrigin
-    public List<Editora> getEditoras()
+    public List<Editora> getEditoras ()
     {
-		return editoraService.getEditoras();
+		return editoraService.getEditoras ();
     }
 
     
-    @PostMapping("/addEditora")
-	public ResponseEntity<ListaResposta> addEditora(@RequestBody Editora editora)
+    @PostMapping ("/addEditora")
+	public ResponseEntity<ListaResposta> addEditora (@RequestBody Editora editora)
 	{
 
-		ListaResposta sResponse = new ListaResposta();
+		ListaResposta sResponse = new ListaResposta ();
 
-		if (editora.getId() != null)
+		if (editora.getId () != null)
 		{
-			sResponse.addMsg("Ao adicionar um item, o ID tem de ser nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Ao adicionar um item, o ID tem de ser nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
-		if ((editora.getNome() == null))
+		if ( (editora.getNome () == null) )
 		{
-			sResponse.addMsg("Nome nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Nome nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((editora.getMorada() == null))
+		if ( (editora.getMorada () == null) )
 		{
-			sResponse.addMsg("Morada nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Morada nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
 		
-		String msg = editoraService.addEditora(editora);
+		String msg = editoraService.addEditora (editora);
 
-		if (!msg.isBlank())
+		if (!msg.isBlank () )
 		{
-			sResponse.addMsg(msg);
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		} 
 		else
 		{
-			sResponse.setStatusOk(true);
-			sResponse.setLista(editoraService.getEditoras());
-			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
+			sResponse.setStatusOk (true);
+			sResponse.setLista (editoraService.getEditoras () );
+			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
 		}
 
 	}

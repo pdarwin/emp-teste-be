@@ -33,65 +33,65 @@ public class AutorController
 	}
 
 	
-    @GetMapping("/getAutores")
+    @GetMapping ("/getAutores")
 	@CrossOrigin
-    public List<Autor> getAutores()
+    public List<Autor> getAutores ()
     {
-		return autorService.getAutores();
+		return autorService.getAutores ();
     }
  
     
-    @PostMapping("/addAutor/{editora_id}")
+    @PostMapping ("/addAutor/{editora_id}")
 	public ResponseEntity<ListaResposta> addAutor (@RequestBody Autor autor, @PathVariable String editora_id)
 	{
-    	ListaResposta sResponse = new ListaResposta();
+    	ListaResposta sResponse = new ListaResposta ();
 
-		if (autor.getId() != null)
+		if (autor.getId () != null)
 		{
-			sResponse.addMsg("ID autor não nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("ID autor não nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
-		if (editora_id == null || editora_id.isBlank())
+		if (editora_id == null || editora_id.isBlank () )
 		{
-			sResponse.addMsg("ID da Editora não preenchido.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("ID da Editora não preenchido.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
 		String msg = autorService.addAutor (autor, editora_id);
 
-		if (!msg.isBlank())
+		if (!msg.isBlank () )
 		{
-			sResponse.addMsg(msg);
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		} 
 		else
 		{
-			sResponse.setStatusOk(true);
-			sResponse.setLista(autorService.getAutores());
-			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
+			sResponse.setStatusOk (true);
+			sResponse.setLista (autorService.getAutores () );
+			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
 		}
 
 	}
 
     
- /*   @DeleteMapping("/deleteAutor/{id}")
-	public ResponseEntity<SimpleResponse> removePessoa(@PathVariable String id)
+ /*   @DeleteMapping ("/deleteAutor/{id}")
+	public ResponseEntity<SimpleResponse> removePessoa (@PathVariable String id)
 	{
 
-		SimpleResponse sResponse = new SimpleResponse();
+		SimpleResponse sResponse = new SimpleResponse ();
 
-		String msg = autorService.deleteAutor(id);
+		String msg = autorService.deleteAutor (id);
 
-		if (!msg.isBlank())
+		if (!msg.isBlank () )
 		{
-			sResponse.addMsg(msg);
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		} 
 		else
 		{
-			sResponse.setStatusOk(true);
-			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
+			sResponse.setStatusOk (true);
+			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
 		}
 
 	} 

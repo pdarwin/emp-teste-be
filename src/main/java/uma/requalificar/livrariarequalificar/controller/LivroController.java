@@ -30,74 +30,74 @@ public class LivroController
 	}
 	
 	
-    @GetMapping("/getLivros")
+    @GetMapping ("/getLivros")
 	@CrossOrigin
-    public List<Livro> getLivros()
+    public List<Livro> getLivros ()
     {
-		return livroService.getLivros();
+		return livroService.getLivros ();
     }
    
     
-    @PostMapping("/addLivro")
+    @PostMapping ("/addLivro")
 	@CrossOrigin
-	public ResponseEntity<ListaResposta> addLivro(@RequestBody Livro livro)
+	public ResponseEntity<ListaResposta> addLivro (@RequestBody Livro livro)
 	{
-    	ListaResposta sResponse = new ListaResposta();
+    	ListaResposta sResponse = new ListaResposta ();
 
-		if (livro.getId() != null)
+		if (livro.getId () != null)
 		{
-			sResponse.addMsg("Ao adicionar um livro, o ID tem de ser nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Ao adicionar um livro, o ID tem de ser nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
-		if ((livro.getTitulo() == null))
+		if ( (livro.getTitulo () == null) )
 		{
-			sResponse.addMsg("Título nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Título nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
-		if ((livro.getData_lancamento() == null))
+		if ( (livro.getData_lancamento () == null) )
 		{
-			sResponse.addMsg("Data de lançamento nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Data de lançamento nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((livro.getEdicao() == null))
+		if ( (livro.getEdicao () == null) )
 		{
-			sResponse.addMsg("Edição nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Edição nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 
-		if ((livro.getImagem_capa() == null))
+		if ( (livro.getImagem_capa () == null) )
 		{
-			sResponse.addMsg("Imagem de capa nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Imagem de capa nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((livro.getIsbn() == null))
+		if ( (livro.getIsbn () == null) )
 		{
-			sResponse.addMsg("ISBN nulo.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("ISBN nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		if ((livro.getSinopse() == null))
+		if ( (livro.getSinopse () == null) )
 		{
-			sResponse.addMsg("Sinopse nula.");
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg ("Sinopse nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		String msg = livroService.addLivro(livro);
+		String msg = livroService.addLivro (livro);
 
-		if (!msg.isBlank())
+		if (!msg.isBlank () )
 		{
-			sResponse.addMsg(msg);
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
+			sResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		} 
 		else
 		{
-			sResponse.setStatusOk(true);
-			sResponse.setLista(livroService.getLivros());
-			return ResponseEntity.status(HttpStatus.OK).body(sResponse);
+			sResponse.setStatusOk (true);
+			sResponse.setLista (livroService.getLivros () );
+			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
 		}
 
 	}

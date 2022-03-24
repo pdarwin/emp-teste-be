@@ -25,11 +25,11 @@ public class CupaoController
 	}
 
 	
-    @GetMapping("/getCupoes")
+    @GetMapping ("/getCupoes")
 	@CrossOrigin
-    public List<Cupao> getCupoes()
+    public List<Cupao> getCupoes ()
     {
-		return cupaoService.getCupoes();
+		return cupaoService.getCupoes ();
     }
  
     

@@ -25,11 +25,11 @@ public class CompraController
 	}
 
 	
-    @GetMapping("/getCompras")
+    @GetMapping ("/getCompras")
 	@CrossOrigin
-    public List<Compra> getCompras()
+    public List<Compra> getCompras ()
     {
-		return compraService.getCompras();
+		return compraService.getCompras ();
     }
  
     
