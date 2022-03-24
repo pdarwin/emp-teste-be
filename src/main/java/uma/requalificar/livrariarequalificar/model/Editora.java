@@ -11,12 +11,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Editora")
+@Table (name = "Editora")
 public class Editora
 {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column (name = "id", nullable = false)
 	private Long id;
 
 	private String nome;
@@ -25,77 +26,87 @@ public class Editora
 	
 	private boolean ativo;
 	
-	@OneToMany(mappedBy = "editora")
+	
+	@OneToMany (mappedBy = "editora")
 	private List<Autor> autores;
 
+	
 	/**
 	 * @return the nome
 	 */
-	public String getNome()
+	public String getNome ()
 	{
 		return nome;
 	}
 
+	
 	/**
 	 * @param nome the nome to set
 	 */
-	public void setNome(String nome)
+	public void setNome (String nome)
 	{
 		this.nome = nome;
 	}
 
+	
 	/**
 	 * @return the morada
 	 */
-	public String getMorada()
+	public String getMorada ()
 	{
 		return morada;
 	}
 
+	
 	/**
 	 * @param morada the morada to set
 	 */
-	public void setMorada(String morada)
+	public void setMorada (String morada)
 	{
 		this.morada = morada;
 	}
 
+	
 	/**
 	 * @return the id
 	 */
-	public Long getId()
+	public Long getId ()
 	{
 		return id;
 	}
 
+	
 	/**
 	 * @return the autores
 	 */
-	public List<Autor> getAutores()
+	public List<Autor> getAutores ()
 	{
 		return autores;
 	}
 
+	
 	/**
 	 * @param autores the autores to set
 	 */
-	public void setAutores(List<Autor> autores)
+	public void setAutores (List<Autor> autores)
 	{
 		this.autores = autores;
 	}
 	
+	
 	/**
 	 * @return the ativo
 	 */
-	public boolean isAtivo()
+	public boolean isAtivo ()
 	{
 		return ativo;
 	}
 
+	
 	/**
 	 * @param ativo the ativo to set
 	 */
-	public void setAtivo(boolean ativo)
+	public void setAtivo (boolean ativo)
 	{
 		this.ativo = ativo;
 	}
