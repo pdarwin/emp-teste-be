@@ -30,7 +30,7 @@ public class ClienteService {
 		return clientes;
 	}
 	
-	public String registarCliente(Cliente cliente)
+	public String regCliente(Cliente cliente)
 	{
 		if (cliente.getNome().isBlank())
 			return "Nome não preenchido.";
@@ -55,6 +55,8 @@ public class ClienteService {
 		if (dataMinima.compareTo(cliente.getData_nascimento().toLocalDate()) > 0 || dataMaxima.compareTo(cliente.getData_nascimento().toLocalDate()) <= 0)
 			return "Data de nascimento inválida.";
 		
+		//Encriptar password
+		cliente.setPassword(Utils.encrypt(cliente.getPassword()));
 		
 		clienteRepository.save(cliente);
 		return "";

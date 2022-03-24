@@ -33,9 +33,9 @@ public class ClienteController {
 		return clienteService.getClientes();
     }
     
-    @PostMapping("/registarCliente")
+    @PostMapping("/regCliente")
 	@CrossOrigin
-	public ResponseEntity<ListaResposta> registarCliente(@RequestBody Cliente cliente)
+	public ResponseEntity<ListaResposta> regCliente(@RequestBody Cliente cliente)
 	{
 
 		ListaResposta sResponse = new ListaResposta();
@@ -78,7 +78,7 @@ public class ClienteController {
 		}
 		
 		
-		String msg = clienteService.registarCliente(cliente);
+		String msg = clienteService.regCliente(cliente);
 
 		if (!msg.isBlank())
 		{
