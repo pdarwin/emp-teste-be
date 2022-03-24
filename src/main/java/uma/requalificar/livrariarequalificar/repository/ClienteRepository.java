@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import uma.requalificar.livrariarequalificar.model.Cliente;
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente, Long>
+public interface ClienteRepository extends CrudRepository <Cliente, Long>
 {
 
 }

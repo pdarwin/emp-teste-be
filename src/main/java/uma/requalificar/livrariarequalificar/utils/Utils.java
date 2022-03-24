@@ -11,30 +11,28 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Utils
 {
-
-    public static boolean validateEmail (String email)
+	public static boolean validateEmail (String email)
     {
     	final String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
     	
-    	Pattern pattern = Pattern.compile(regex);
+    	Pattern pattern = Pattern.compile (regex);
 
-            Matcher matcher = pattern.matcher(email);
+            Matcher matcher = pattern.matcher (email);
 
-            return matcher.matches();
-    	
+            return matcher.matches ();
     }
     
     public static boolean validatePassword (String password)
     {
     	final String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$";
     	
-    	Pattern pattern = Pattern.compile(regex);
+    	Pattern pattern = Pattern.compile (regex);
 
-            Matcher matcher = pattern.matcher(password);
+            Matcher matcher = pattern.matcher (password);
 
-            return matcher.matches();
-    	
+            return matcher.matches ();	
     }
+    
     
     // adaptado a partir de:
     // https://stackoverflow.com/questions/23561104/how-to-encrypt-and-decrypt-string-with-my-passphrase-in-java-pc-not-mobile-plat
@@ -43,26 +41,32 @@ public class Utils
     	try 
         {
             String key = "Bar12345Bar12345"; // 128 bit key
+            
             // Create key and cipher
-            Key aesKey = new SecretKeySpec(key.getBytes(), "AES");
-            Cipher cipher = Cipher.getInstance("AES");
+            
+            Key aesKey = new SecretKeySpec (key.getBytes (), "AES");
+            Cipher cipher = Cipher.getInstance ("AES");
+            
             // encrypt the text
-            cipher.init(Cipher.ENCRYPT_MODE, aesKey);
-            byte[] encrypted = cipher.doFinal(password.getBytes());
+            
+            cipher.init (Cipher.ENCRYPT_MODE, aesKey);
+            byte[] encrypted = cipher.doFinal (password.getBytes () );
 
-            StringBuilder sb = new StringBuilder();
-            for (byte b: encrypted) {
-                sb.append((char)b);
+            StringBuilder sb = new StringBuilder ();
+            for (byte b: encrypted) 
+            {
+                sb.append ( (char) b );
             }
 
             // the encrypted String
-            String enc = sb.toString();
+            
+            String enc = sb.toString ();
             return enc;
 
         }
-        catch(Exception e) 
+        catch (Exception e) 
         {
-            e.printStackTrace();
+            e.printStackTrace ();
         }
     	
     	return "";
@@ -75,26 +79,31 @@ public class Utils
         {
 
             String key = "Bar12345Bar12345"; // 128 bit key
+            
             // Create key and cipher
-            Key aesKey = new SecretKeySpec(key.getBytes(), "AES");
-            Cipher cipher = Cipher.getInstance("AES");
+            
+            Key aesKey = new SecretKeySpec (key.getBytes (), "AES");
+            Cipher cipher = Cipher.getInstance ("AES");
             
             // now convert the string to byte array
             // for decryption
-            byte[] bb = new byte[hashedPassword.length()];
-            for (int i=0; i<hashedPassword.length(); i++) {
-                bb[i] = (byte) hashedPassword.charAt(i);
+            
+            byte[] bb = new byte[hashedPassword.length () ];
+            for (int i=0; i < hashedPassword.length (); i++) 
+            {
+                bb[i] = (byte) hashedPassword.charAt (i);
             }
 
             // decrypt the text
-            cipher.init(Cipher.DECRYPT_MODE, aesKey);
-            String decrypted = new String(cipher.doFinal(bb));
+            
+            cipher.init (Cipher.DECRYPT_MODE, aesKey);
+            String decrypted = new String (cipher.doFinal (bb) );
             return decrypted;
 
         }
-        catch(Exception e) 
+        catch (Exception e) 
         {
-            e.printStackTrace();
+            e.printStackTrace ();
         }
     	
     	return "";
