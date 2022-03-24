@@ -31,6 +31,7 @@ public class ClienteService
 		return clientes;
 	}
 	
+	
 	public String regCliente (Cliente cliente)
 	{
 		if (cliente.getNome ().isBlank () )
@@ -58,6 +59,7 @@ public class ClienteService
 		
 		//Encriptar password
 		cliente.setPassword (Utils.encrypt (cliente.getPassword () ) );
+		
 		
 		clienteRepository.save (cliente);
 		return "";

@@ -29,10 +29,18 @@ public class EditoraService
 		return editoras;
 	}
 
-	public String addEditora (Object editora) 
+	
+	public String addEditora (Editora editora) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		if (editora.getNome ().isBlank () )
+			return "Nome não preenchido.";
+		
+		if (editora.getMorada ().isBlank () )
+			return "Morada não preenchida.";
+		
+		
+		editoraRepository.save (editora);
+		return "";
 	}
 
 	
