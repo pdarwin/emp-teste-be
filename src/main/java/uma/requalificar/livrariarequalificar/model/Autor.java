@@ -32,6 +32,8 @@ public class Autor
 	
 	private String email;
 	
+	private boolean ativo;
+	
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "editora_id", nullable = false)
@@ -128,6 +130,21 @@ public class Autor
 		this.livros = livros;
 	}
 
+	/**
+	 * @return the ativo
+	 */
+	public boolean isAtivo()
+	{
+		return ativo;
+	}
+
+	/**
+	 * @param ativo the ativo to set
+	 */
+	public void setAtivo(boolean ativo)
+	{
+		this.ativo = ativo;
+	}
 	
 	
 }

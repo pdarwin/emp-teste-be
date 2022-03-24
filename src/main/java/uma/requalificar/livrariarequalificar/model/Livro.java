@@ -40,6 +40,8 @@ public class Livro
 	
 	private String imagem_capa;
 	
+	private boolean ativo;
+	
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "autor_id", nullable = false)
@@ -197,6 +199,20 @@ public class Livro
 		return id;
 	}
 
-	
+	/**
+	 * @return the ativo
+	 */
+	public boolean isAtivo()
+	{
+		return ativo;
+	}
+
+	/**
+	 * @param ativo the ativo to set
+	 */
+	public void setAtivo(boolean ativo)
+	{
+		this.ativo = ativo;
+	}
 	
 }

@@ -26,6 +26,8 @@ public class Funcionario
 	private String username;
 	
 	private String password;
+	
+	private boolean ativo;
 
 	/**
 	 * @return the nome
@@ -99,6 +101,22 @@ public class Funcionario
 		this.password = password;
 	}
 	
+	
+	/**
+	 * @return the ativo
+	 */
+	public boolean isAtivo()
+	{
+		return ativo;
+	}
+
+	/**
+	 * @param ativo the ativo to set
+	 */
+	public void setAtivo(boolean ativo)
+	{
+		this.ativo = ativo;
+	}
 	
 
 }

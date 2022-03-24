@@ -23,6 +23,8 @@ public class Cupao
 
 	private int desconto; // em percentagem, sobre o preço do livro
 	
+	private boolean ativo;
+
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "cliente_id", nullable = false)
@@ -68,6 +70,20 @@ public class Cupao
 		this.cliente = cliente;
 	}
 	
-	
+	/**
+	 * @return the ativo
+	 */
+	public boolean isAtivo()
+	{
+		return ativo;
+	}
+
+	/**
+	 * @param ativo the ativo to set
+	 */
+	public void setAtivo(boolean ativo)
+	{
+		this.ativo = ativo;
+	}
 	
 }

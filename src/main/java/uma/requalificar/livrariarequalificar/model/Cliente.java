@@ -31,6 +31,8 @@ public class Cliente
 	
 	private String morada;
 	
+	private boolean ativo;
+	
 	@OneToMany(mappedBy = "cliente")
 	private List<Cupao> cupoes;
 	
@@ -141,6 +143,21 @@ public class Cliente
 		this.cupoes = cupoes;
 	}
 	
+	/**
+	 * @return the ativo
+	 */
+	public boolean isAtivo()
+	{
+		return ativo;
+	}
+
+	/**
+	 * @param ativo the ativo to set
+	 */
+	public void setAtivo(boolean ativo)
+	{
+		this.ativo = ativo;
+	}
 	
 
 }

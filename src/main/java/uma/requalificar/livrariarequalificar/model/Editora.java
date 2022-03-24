@@ -23,6 +23,8 @@ public class Editora
 		
 	private String morada;
 	
+	private boolean ativo;
+	
 	@OneToMany(mappedBy = "editora")
 	private List<Autor> autores;
 
@@ -81,5 +83,22 @@ public class Editora
 	{
 		this.autores = autores;
 	}
+	
+	/**
+	 * @return the ativo
+	 */
+	public boolean isAtivo()
+	{
+		return ativo;
+	}
+
+	/**
+	 * @param ativo the ativo to set
+	 */
+	public void setAtivo(boolean ativo)
+	{
+		this.ativo = ativo;
+	}
+	
 	
 }
