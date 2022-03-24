@@ -1,5 +1,5 @@
 package uma.requalificar.livrariarequalificar.service;
 
-public class Service {
+public class CompraService {
 
 }
