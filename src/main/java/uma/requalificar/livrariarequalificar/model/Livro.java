@@ -1,6 +1,8 @@
 package uma.requalificar.livrariarequalificar.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,10 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Livro")
@@ -42,10 +43,13 @@ public class Livro
 	
 	private boolean ativo;
 	
-	@ManyToOne
-	@JsonIgnore
-	@JoinColumn(name = "autor_id", nullable = false)
-	private Autor autor;
+    @ManyToMany
+    @JoinTable(
+            name = "Livro_Autor",
+            joinColumns = { @JoinColumn(name = "livro_id") },
+            inverseJoinColumns = { @JoinColumn(name = "autor_id") }
+    )
+    List<Autor> autores = new ArrayList<>();
 
 	/**
 	 * @return the titulo
@@ -214,5 +218,22 @@ public class Livro
 	{
 		this.ativo = ativo;
 	}
+
+	/**
+	 * @return the autores
+	 */
+	public List<Autor> getAutores()
+	{
+		return autores;
+	}
+
+	/**
+	 * @param autores the autores to set
+	 */
+	public void setAutores(List<Autor> autores)
+	{
+		this.autores = autores;
+	}
+	
 	
 }
