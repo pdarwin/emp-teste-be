@@ -27,5 +27,10 @@ public class EditoraService {
 
 		return editoras;
 	}
+
+	public String addEditora(Object editora) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
