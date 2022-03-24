@@ -20,7 +20,7 @@ public class Utils
     
     public static boolean validatePassword (String password)
     {
-    	final String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.{8,20}$";
+    	final String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$";
     	
     	Pattern pattern = Pattern.compile(regex);
 
