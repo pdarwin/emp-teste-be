@@ -34,6 +34,7 @@ public class LivroController {
     }
     
     @PostMapping("/addLivro")
+	@CrossOrigin
 	public ResponseEntity<ListaResposta> addLivro(@RequestBody Livro livro)
 	{
 
@@ -41,7 +42,7 @@ public class LivroController {
 
 		if (livro.getId() != null)
 		{
-			sResponse.addMsg("Ao adicionar um item, o ID tem de ser nulo.");
+			sResponse.addMsg("Ao adicionar um livro, o ID tem de ser nulo.");
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sResponse);
 		}
 
