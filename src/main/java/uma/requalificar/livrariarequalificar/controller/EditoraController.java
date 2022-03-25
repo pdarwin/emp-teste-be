@@ -39,6 +39,7 @@ public class EditoraController
 
     
     @PostMapping ("/addEditora")
+    @CrossOrigin
 	public ResponseEntity<ListaResposta> addEditora (@RequestBody Editora editora)
 	{
 

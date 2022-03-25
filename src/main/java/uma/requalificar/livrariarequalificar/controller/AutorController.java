@@ -42,6 +42,7 @@ public class AutorController
  
     
     @PostMapping ("/addAutor/{editora_id}")
+    @CrossOrigin
 	public ResponseEntity<ListaResposta> addAutor (@RequestBody Autor autor, @PathVariable String editora_id)
 	{
     	ListaResposta sResponse = new ListaResposta ();
