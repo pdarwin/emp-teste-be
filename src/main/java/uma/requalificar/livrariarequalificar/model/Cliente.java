@@ -12,13 +12,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cliente")
+@Table (name = "Cliente")
 public class Cliente
 {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column (name = "id", nullable = false)
 	private Long id;
 
 	private String nome;
@@ -33,128 +33,145 @@ public class Cliente
 	
 	private boolean ativo;
 	
-	@OneToMany(mappedBy = "cliente")
+	
+	@OneToMany (mappedBy = "cliente")
 	private List<Cupao> cupoes;
 	
-	@OneToMany(mappedBy = "cliente")
+	
+	@OneToMany (mappedBy = "cliente")
 	private List<Compra> compras;
 
+	
 	/**
 	 * @return the nome
 	 */
-	public String getNome()
+	public String getNome ()
 	{
 		return nome;
 	}
 
+	
 	/**
 	 * @param nome the nome to set
 	 */
-	public void setNome(String nome)
+	public void setNome (String nome)
 	{
 		this.nome = nome;
 	}
-
+	
+	
 	/**
 	 * @return the data_nascimento
 	 */
-	public Date getData_nascimento()
+	public Date getData_nascimento ()
 	{
 		return data_nascimento;
 	}
 
+	
 	/**
 	 * @param data_nascimento the data_nascimento to set
 	 */
-	public void setData_nascimento(Date data_nascimento)
+	public void setData_nascimento (Date data_nascimento)
 	{
 		this.data_nascimento = data_nascimento;
 	}
 
+	
 	/**
 	 * @return the id
 	 */
-	public Long getId()
+	public Long getId ()
 	{
 		return id;
 	}
 
+	
 	/**
 	 * @return the email
 	 */
-	public String getEmail()
+	public String getEmail ()
 	{
 		return email;
 	}
 
+	
 	/**
 	 * @param email the email to set
 	 */
-	public void setEmail(String email)
+	public void setEmail (String email)
 	{
 		this.email = email;
 	}
 
+	
 	/**
 	 * @return the morada
 	 */
-	public String getMorada()
+	public String getMorada ()
 	{
 		return morada;
 	}
 
+	
 	/**
 	 * @param morada the morada to set
 	 */
-	public void setMorada(String morada)
+	public void setMorada (String morada)
 	{
 		this.morada = morada;
 	}
+
 	
 	/**
 	 * @return the password
 	 */
-	public String getPassword()
+	public String getPassword ()
 	{
 		return password;
 	}
 
+	
 	/**
 	 * @param password the password to set
 	 */
-	public void setPassword(String password)
+	public void setPassword (String password)
 	{
 		this.password = password;
 	}
 
+	
 	/**
 	 * @return the cupoes
 	 */
-	public List<Cupao> getCupoes()
+	public List<Cupao> getCupoes ()
 	{
 		return cupoes;
 	}
 
+	
 	/**
 	 * @param cupoes the cupoes to set
 	 */
-	public void setCupoes(List<Cupao> cupoes)
+	public void setCupoes (List<Cupao> cupoes)
 	{
 		this.cupoes = cupoes;
 	}
 	
+	
 	/**
 	 * @return the ativo
 	 */
-	public boolean isAtivo()
+	public boolean isAtivo ()
 	{
 		return ativo;
 	}
 
+	
 	/**
 	 * @param ativo the ativo to set
 	 */
-	public void setAtivo(boolean ativo)
+	public void setAtivo (boolean ativo)
 	{
 		this.ativo = ativo;
 	}

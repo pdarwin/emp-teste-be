@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import uma.requalificar.livrariarequalificar.model.Funcionario;
 import uma.requalificar.livrariarequalificar.service.FuncionarioService;
 
+
 @RestController
 @CrossOrigin
-public class FuncionarioController {
-
+public class FuncionarioController 
+{
 	private final FuncionarioService funcionarioService;
+	
 	
 	@Autowired
 	public FuncionarioController (FuncionarioService funcionarioService)
@@ -22,10 +24,13 @@ public class FuncionarioController {
 		this.funcionarioService = funcionarioService;
 	}
 	
-    @GetMapping("/getFuncionarios")
+	
+    @GetMapping ("/getFuncionarios")
 	@CrossOrigin
-    public List<Funcionario> getFuncionarios(){
-		return funcionarioService.getFuncionarios();
+    public List<Funcionario> getFuncionarios ()
+    {
+		return funcionarioService.getFuncionarios ();
     }
+ 
     
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import uma.requalificar.livrariarequalificar.model.Livro;
 
 @Repository
-public interface LivroRepository extends CrudRepository<Livro, Long>
+public interface LivroRepository extends CrudRepository <Livro, Long>
 {
 
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import uma.requalificar.livrariarequalificar.model.Autor;
 
 @Repository
-public interface AutorRepository extends CrudRepository<Autor, Long>
+public interface AutorRepository extends CrudRepository <Autor, Long>
 {
 
 }

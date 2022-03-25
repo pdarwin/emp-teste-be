@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import uma.requalificar.livrariarequalificar.model.Funcionario;
 
 @Repository
-public interface FuncionarioRepository extends CrudRepository<Funcionario, Long>
+public interface FuncionarioRepository extends CrudRepository <Funcionario, Long>
 {
 
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import uma.requalificar.livrariarequalificar.model.Editora;
 
 @Repository
-public interface EditoraRepository extends CrudRepository<Editora, Long>
+public interface EditoraRepository extends CrudRepository <Editora, Long>
 {
 
 }

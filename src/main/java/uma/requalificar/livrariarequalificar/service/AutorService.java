@@ -13,52 +13,55 @@ import uma.requalificar.livrariarequalificar.model.Autor;
 import uma.requalificar.livrariarequalificar.repository.AutorRepository;
 
 @Service
-public class AutorService {
-	
+public class AutorService 
+{
 	private final AutorRepository autorRepository;
 
+	
 	@Autowired
 	public AutorService (AutorRepository autorRepository)
 	{
 		this.autorRepository = autorRepository;
 	}
 	
-	public List<Autor> getAutores()
+	public List<Autor> getAutores ()
 	{
-		List<Autor> autores = new ArrayList<>();
-		autorRepository.findAll().forEach(autores::add);
+		List<Autor> autores = new ArrayList<> ();
+		autorRepository.findAll ().forEach (autores::add);
 
 		return autores;
 	}
 
-	public String addAutor(Autor autor, String editora_id) {
-		
-		autorRepository.save(autor);
+	
+	public String addAutor (Autor autor, String editora_id) 
+	{
+		autorRepository.save (autor);
 		return "";
 	}
 
-/*	public String deleteAutor(String id) {
-		
+	
+/*	public String deleteAutor (String id) 
+ * {
 		try
 		{
-			Long id_long = parseLong(id);
+			Long id_long = parseLong (id);
 
-			if (id == null || id_long == NaN || autorRepository.findById(id_long).isEmpty())
+			if (id == null || id_long == NaN || autorRepository.findById (id_long).isEmpty () )
 			{
 				return "ID de andar inexistente ou fora de formato.";
 			}
 
-			Autor autor = autorRepository.findById(id_long).get();
-			autorRepository.delete(autor);
+			Autor autor = autorRepository.findById (id_long).get ();
+			autorRepository.delete (autor);
 			return "";
 
-		} catch (Exception e)
+		} 
+		catch (Exception e)
 		{
 			return "o ID tem de ser um n.º longo.";
 		}
 	}
 */
-	
 	
 	
 }

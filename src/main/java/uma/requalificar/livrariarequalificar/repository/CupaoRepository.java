@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import uma.requalificar.livrariarequalificar.model.Cupao;
 
 @Repository
-public interface CupaoRepository extends CrudRepository<Cupao, Long>
+public interface CupaoRepository extends CrudRepository <Cupao, Long>
 {
 
 }
