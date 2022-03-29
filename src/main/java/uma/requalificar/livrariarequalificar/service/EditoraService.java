@@ -42,6 +42,7 @@ public class EditoraService
 		if (editora.getMorada ().isBlank () )
 			return "Morada não preenchida.";
 		
+		editora.setAtivo(true);
 		
 		editoraRepository.save (editora);
 		return "";
@@ -60,7 +61,7 @@ public class EditoraService
 			}
 
 			Editora editora = editoraRepository.findById (id_long).get ();
-			editoraRepository.delete (editora);
+			editoraRepository.save(editora);
 			return "";
 
 		} 
@@ -82,8 +83,10 @@ public class EditoraService
 			{
 				return "ID de editora inexistente ou fora de formato.";
 			}
-
+			
+			
 			Editora editora = editoraRepository.findById (id_long).get ();
+			editora.setAtivo(false);
 			editoraRepository.delete (editora);
 			return "";
 
