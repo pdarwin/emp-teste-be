@@ -37,7 +37,6 @@ public class ClienteController
 		return clienteService.getClientes ();
     }
     
-<<<<<<< HEAD
     @PostMapping ("/validateCliente")
 	@CrossOrigin
     public ResponseEntity<ListaResposta> validateCliente (@RequestBody Cliente cliente)
@@ -98,9 +97,6 @@ public class ClienteController
     
     
     @PostMapping ("/addCliente")
-
-    @PostMapping ("/regCliente")
->>>>>>> afbaf4fe141db7ae86291b50ee79fe723535f51b
 	@CrossOrigin
 	public ResponseEntity<ListaResposta> addCliente (@RequestBody Cliente cliente)
 	{
