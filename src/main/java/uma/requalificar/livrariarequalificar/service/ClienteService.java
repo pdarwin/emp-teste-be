@@ -51,6 +51,9 @@ public class ClienteService
 		if (!Utils.validatePassword (cliente.getPassword () ) )
 			return "Palavra-passe inválida. A palavra-passe deve ter entre 8 e 20 caracteres, e conter pelo menos uma letra minúscula, uma letra maiúscula e um dígito";
 	
+		String msg = validateEmail(cliente.getEmail());
+		if (!msg.isBlank())
+			return msg;
 		
 		LocalDate dataMaxima = LocalDate.now ();
 		
@@ -99,14 +102,14 @@ public class ClienteService
 		return "Email não encontrado";
 	}
 
-	public String validateEmail (Cliente cliente)
+	public String validateEmail (String email)
 	{
-		if (cliente.getEmail ().isBlank () )
+		if (email.isBlank () )
 			return "Email não preenchido.";
 		
 		for (Cliente clienteAux : getClientes())
 		{
-			if (clienteAux.getEmail().equals(cliente.getEmail()))
+			if (clienteAux.getEmail().equals(email))
 			{
 				return "Já existe um cliente registado com este email";
 			}

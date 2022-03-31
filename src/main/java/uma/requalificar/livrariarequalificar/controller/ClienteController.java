@@ -69,32 +69,6 @@ public class ClienteController
 		}
     }
     
-    @PostMapping ("/validateEmail")
- 	@CrossOrigin
-     public ResponseEntity<ListaResposta> validateEmail (@RequestBody Cliente cliente)
-     {
-     	ListaResposta sResponse = new ListaResposta ();
-     	
- 		if ( (cliente.getEmail () == null) )
- 		{
- 			sResponse.addMsg ("Email nulo.");
- 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
- 		}
-     	
- 		String msg = clienteService.validateEmail (cliente);
- 		
- 		if (!msg.isBlank () )
- 		{
- 			sResponse.addMsg (msg);
- 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
- 		} 
- 		else
- 		{
- 			sResponse.setStatusOk (true);
- 			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
- 		}
-     }
-    
     
     @PostMapping ("/addCliente")
 	@CrossOrigin
