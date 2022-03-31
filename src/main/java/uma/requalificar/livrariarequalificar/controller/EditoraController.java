@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,24 +47,24 @@ public class EditoraController
 	public ResponseEntity<ListaResposta> addEditora (@RequestBody Editora editora)
 	{
 
-		ListaResposta sResponse = new ListaResposta ();
+		ListaResposta simpleResponse = new ListaResposta ();
 
 		if (editora.getId () != null)
 		{
-			sResponse.addMsg ("Ao adicionar um item, o ID tem de ser nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			simpleResponse.addMsg ("Ao adicionar um item, o ID tem de ser nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
 		}
 
 		if ( (editora.getNome () == null) )
 		{
-			sResponse.addMsg ("Nome nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			simpleResponse.addMsg ("Nome nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
 		}
 		
 		if ( (editora.getMorada () == null) )
 		{
-			sResponse.addMsg ("Morada nula.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			simpleResponse.addMsg ("Morada nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
 		}
 
 		
@@ -70,32 +72,63 @@ public class EditoraController
 
 		if (!msg.isBlank () )
 		{
-			sResponse.addMsg (msg);
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			simpleResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
 		} 
 		else
 		{
-			sResponse.setStatusOk (true);
-			sResponse.setLista (editoraService.getEditoras () );
-			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
+			simpleResponse.setStatusOk (true);
+			simpleResponse.setLista (editoraService.getEditoras () );
+			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
 		}
 
 	}
     
     
-/*    @PutMapping("/updateEditora")
-    public ResponseEntity<SimpleResponse> updateEmpresa (@RequestBody Editora editora){
-        SimpleResponse sr = new SimpleResponse();
-
-        if (autorEditoraService.updateEditora(editora)){
-            sr.setSucess("Sucesso ao atualizar a empresa");
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(sr);
-        }
+    @CrossOrigin
+    @PutMapping ("/updateEditora/{id}")
+    public ResponseEntity<SimpleResponse> updateEmpresa (@PathVariable String id)
+    {
+        SimpleResponse simpleResponse = new SimpleResponse ();
         
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sr);
-    }
-  */
+        String msg = editoraService.updateEditora (id);
+
+        if (!msg.isBlank () )
+		{
+			simpleResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+		} 
+		else
+		{
+			simpleResponse.setStatusOk (true);
+			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
+		}
+
+	}
+  
+    
+    @CrossOrigin
+    @DeleteMapping ("/deleteEditora/{id}")
+	public ResponseEntity<SimpleResponse> removeEditora (@PathVariable String id)
+	{
+
+		SimpleResponse simpleResponse = new SimpleResponse ();
+
+		String msg = editoraService.deleteEditora (id);
+
+		if (!msg.isBlank () )
+		{
+			simpleResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+		} 
+		else
+		{
+			simpleResponse.setStatusOk (true);
+			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
+		}
+
+	}
+        
+    
     
 }
