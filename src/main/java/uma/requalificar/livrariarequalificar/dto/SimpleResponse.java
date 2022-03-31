@@ -9,13 +9,13 @@ public class SimpleResponse
 	public SimpleResponse ()
 	{
 		statusOk = false;
-		msg = "Ocorreu um erro";
+		msg = "";
 	}
 
 	
 	public void addMsg (String msg)
 	{
-		this.msg += ": " + msg;
+		this.msg += msg;
 	}
 
 	
