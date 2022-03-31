@@ -37,10 +37,68 @@ public class ClienteController
 		return clienteService.getClientes ();
     }
     
-    
-    @PostMapping ("/regCliente")
+    @PostMapping ("/validateCliente")
 	@CrossOrigin
-	public ResponseEntity<ListaResposta> regCliente (@RequestBody Cliente cliente)
+    public ResponseEntity<ListaResposta> validateCliente (@RequestBody Cliente cliente)
+    {
+    	ListaResposta sResponse = new ListaResposta ();
+    	
+		if ( (cliente.getEmail () == null) )
+		{
+			sResponse.addMsg ("Email nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+		}
+		
+		if ( (cliente.getPassword () == null) )
+		{
+			sResponse.addMsg ("Password nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+		}
+    	
+		String msg = clienteService.validateCliente (cliente);
+		
+		if (!msg.isBlank () )
+		{
+			sResponse.addMsg (msg);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+		} 
+		else
+		{
+			sResponse.setStatusOk (true);
+			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
+		}
+    }
+    
+    @PostMapping ("/validateEmail")
+ 	@CrossOrigin
+     public ResponseEntity<ListaResposta> validateEmail (@RequestBody Cliente cliente)
+     {
+     	ListaResposta sResponse = new ListaResposta ();
+     	
+ 		if ( (cliente.getEmail () == null) )
+ 		{
+ 			sResponse.addMsg ("Email nulo.");
+ 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+ 		}
+     	
+ 		String msg = clienteService.validateEmail (cliente);
+ 		
+ 		if (!msg.isBlank () )
+ 		{
+ 			sResponse.addMsg (msg);
+ 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+ 		} 
+ 		else
+ 		{
+ 			sResponse.setStatusOk (true);
+ 			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
+ 		}
+     }
+    
+    
+    @PostMapping ("/addCliente")
+	@CrossOrigin
+	public ResponseEntity<ListaResposta> addCliente (@RequestBody Cliente cliente)
 	{
     	ListaResposta sResponse = new ListaResposta ();
 
@@ -80,7 +138,7 @@ public class ClienteController
 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
 		}
 		
-		String msg = clienteService.regCliente (cliente);
+		String msg = clienteService.addCliente (cliente);
 
 		if (!msg.isBlank () )
 		{

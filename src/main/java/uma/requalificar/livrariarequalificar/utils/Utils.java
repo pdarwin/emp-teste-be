@@ -1,13 +1,13 @@
 package uma.requalificar.livrariarequalificar.utils;
 
-import java.security.InvalidKeyException;
 import java.security.Key;
-import java.security.PublicKey;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
+
+
 
 public class Utils
 {

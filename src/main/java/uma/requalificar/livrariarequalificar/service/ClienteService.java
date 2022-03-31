@@ -1,5 +1,7 @@
 package uma.requalificar.livrariarequalificar.service;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +34,7 @@ public class ClienteService
 	}
 	
 	
-	public String regCliente (Cliente cliente)
+	public String addCliente (Cliente cliente)
 	{
 		if (cliente.getNome ().isBlank () )
 			return "Nome não preenchido.";
@@ -58,12 +60,59 @@ public class ClienteService
 			return "Data de nascimento inválida.";
 		
 		//Encriptar password
-		cliente.setPassword (Utils.encrypt (cliente.getPassword () ) );
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		cliente.setPassword (passwordEncoder.encode(cliente.getPassword () ) );
 		
 		
 		clienteRepository.save (cliente);
 		return "";
 	}
+	
+	public String validateCliente (Cliente cliente)
+	{
+		if (cliente.getEmail ().isBlank () )
+			return "Email não preenchido.";
+		
+		if (cliente.getPassword ().isBlank () )
+			return "Palavra-passe não preenchida.";
+		
+		for (Cliente clienteAux : getClientes())
+		{
+			if (clienteAux.getEmail().equals(cliente.getEmail()))
+			{
+				//Testar password
+				BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+				if (!passwordEncoder.matches(cliente.getPassword(), clienteAux.getPassword()))
+				{
+					return "Palavra-passe errada.";
+				}
+				else if (!clienteAux.isAtivo())
+				{
+					return "Cliente inativo.";
+				}
+				else return "";
 
+			}
+			
+		}
+	
+		return "Email não encontrado";
+	}
+
+	public String validateEmail (Cliente cliente)
+	{
+		if (cliente.getEmail ().isBlank () )
+			return "Email não preenchido.";
+		
+		for (Cliente clienteAux : getClientes())
+		{
+			if (clienteAux.getEmail().equals(cliente.getEmail()))
+			{
+				return "Já existe um cliente registado com este email";
+			}
+		}
+	
+		return "";
+	}
 	
 }
