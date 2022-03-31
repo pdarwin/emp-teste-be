@@ -45,32 +45,29 @@ public class AutorController
     @CrossOrigin
 	public ResponseEntity<ListaResposta> addAutor (@RequestBody Autor autor, @PathVariable String editora_id)
 	{
-    	ListaResposta simpleResponse = new ListaResposta ();
+    	ListaResposta listaResposta = new ListaResposta ();
 
 		if (autor.getId () != null)
 		{
-			simpleResponse.addMsg ("ID autor não nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			listaResposta.addMsg ("ID autor não nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 
 		if (editora_id == null || editora_id.isBlank () )
 		{
-			simpleResponse.addMsg ("ID da Editora não preenchido.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			listaResposta.addMsg ("ID da Editora não preenchido.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 
-		String msg = autorService.addAutor (autor, editora_id);
+		listaResposta = autorService.addAutor (autor, editora_id);
 
-		if (!msg.isBlank () )
+		if (!listaResposta.isStatusOk() )
 		{
-			simpleResponse.addMsg (msg);
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		} 
 		else
 		{
-			simpleResponse.setStatusOk (true);
-			simpleResponse.setLista (autorService.getAutores () );
-			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
+			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
 		}
 
 	}

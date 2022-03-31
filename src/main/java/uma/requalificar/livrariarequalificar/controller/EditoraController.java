@@ -47,39 +47,36 @@ public class EditoraController
 	public ResponseEntity<ListaResposta> addEditora (@RequestBody Editora editora)
 	{
 
-		ListaResposta simpleResponse = new ListaResposta ();
+		ListaResposta listaResposta = new ListaResposta ();
 
 		if (editora.getId () != null)
 		{
-			simpleResponse.addMsg ("Ao adicionar um item, o ID tem de ser nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			listaResposta.addMsg ("Ao adicionar um item, o ID tem de ser nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 
 		if ( (editora.getNome () == null) )
 		{
-			simpleResponse.addMsg ("Nome nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			listaResposta.addMsg ("Nome nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 		
 		if ( (editora.getMorada () == null) )
 		{
-			simpleResponse.addMsg ("Morada nula.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			listaResposta.addMsg ("Morada nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 
 		
-		String msg = editoraService.addEditora (editora);
+		listaResposta = editoraService.addEditora (editora);
 
-		if (!msg.isBlank () )
+		if (!listaResposta.isStatusOk() )
 		{
-			simpleResponse.addMsg (msg);
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		} 
 		else
 		{
-			simpleResponse.setStatusOk (true);
-			simpleResponse.setLista (editoraService.getEditoras () );
-			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
+			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
 		}
 
 	}
@@ -89,19 +86,16 @@ public class EditoraController
     @PutMapping ("/updateEditora/{id}")
     public ResponseEntity<SimpleResponse> updateEmpresa (@PathVariable String id)
     {
-        SimpleResponse simpleResponse = new SimpleResponse ();
         
-        String msg = editoraService.updateEditora (id);
+        ListaResposta listaResposta = editoraService.updateEditora (id);
 
-        if (!msg.isBlank () )
+        if (!listaResposta.isStatusOk() )
 		{
-			simpleResponse.addMsg (msg);
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		} 
 		else
 		{
-			simpleResponse.setStatusOk (true);
-			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
+			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
 		}
 
 	}

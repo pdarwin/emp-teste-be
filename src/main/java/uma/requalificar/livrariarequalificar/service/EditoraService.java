@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Editora;
 import uma.requalificar.livrariarequalificar.repository.EditoraRepository;
 
@@ -34,40 +35,63 @@ public class EditoraService
 	}
 
 	
-	public String addEditora (Editora editora) 
+	public ListaResposta addEditora (Editora editora) 
 	{
+		ListaResposta listaResposta = new ListaResposta(); 
+		
 		if (editora.getNome ().isBlank () )
-			return "Nome não preenchido.";
+		{
+			listaResposta.addMsg( "Nome não preenchido.");
+			return listaResposta;
+		}
 		
 		if (editora.getMorada ().isBlank () )
-			return "Morada não preenchida.";
+		{
+			listaResposta.addMsg( "Morada não preenchida.");
+			return listaResposta;
+		}
+		
+		for (Editora editoraAux: getEditoras())
+		{
+			if (editoraAux.getNome().equals(editora.getNome()))
+			{
+				listaResposta.addMsg( "Já existe uma editora com este nome.");
+				return listaResposta;
+			}
+		}
 		
 		editora.setAtivo(true);
 		
 		editoraRepository.save (editora);
-		return "";
+		listaResposta.setNewID(editora.getId());
+		listaResposta.setStatusOk(true);
+		return listaResposta;
 	}
 	
 	// Estou a passar o update como se fosse um delete!!! Mudar?!
-	public String updateEditora (String id) 
+	public ListaResposta  updateEditora (String id) 
 	{
+		ListaResposta listaResposta = new ListaResposta(); 
 		try
 		{
 			Long id_long = parseLong (id);
 
 			if (id == null || id_long == NaN || editoraRepository.findById (id_long).isEmpty () )
 			{
-				return "ID de editora inexistente ou fora de formato.";
+				listaResposta.addMsg("ID de editora inexistente ou fora de formato.");
+				return (listaResposta);
 			}
 
 			Editora editora = editoraRepository.findById (id_long).get ();
 			editoraRepository.save(editora);
-			return "";
+			listaResposta.setStatusOk(true);
+			return (listaResposta);
 
 		} 
 		catch (Exception e)
 		{
-			return "o ID tem de ser um n.º longo.";
+			listaResposta.addMsg("o ID tem de ser um n.º longo.");
+			return (listaResposta);
 		}
 
 	}

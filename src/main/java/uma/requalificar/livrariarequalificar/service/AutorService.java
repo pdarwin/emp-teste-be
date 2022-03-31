@@ -3,25 +3,26 @@ package uma.requalificar.livrariarequalificar.service;
 import java.util.ArrayList;
 import java.util.List;
 
-//import static java.lang.Float.NaN;
-//import static java.lang.Long.parseLong;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Autor;
+import uma.requalificar.livrariarequalificar.model.Editora;
 import uma.requalificar.livrariarequalificar.repository.AutorRepository;
+import uma.requalificar.livrariarequalificar.repository.EditoraRepository;
 
 @Service
 public class AutorService 
 {
 	private final AutorRepository autorRepository;
-
+	private final EditoraRepository editoraRepository;
 	
 	@Autowired
-	public AutorService (AutorRepository autorRepository)
+	public AutorService (AutorRepository autorRepository, EditoraRepository editoraRepository)
 	{
 		this.autorRepository = autorRepository;
+		this.editoraRepository = editoraRepository;
 	}
 	
 	public List<Autor> getAutores ()
@@ -33,10 +34,41 @@ public class AutorService
 	}
 
 	
-	public String addAutor (Autor autor, String editora_id) 
+	public ListaResposta addAutor (Autor autor, String editora_id) 
 	{
+		ListaResposta listaResposta = new ListaResposta(); 
+		
+		if (autor.getNome ().isBlank () )
+		{
+			listaResposta.addMsg( "Nome não preenchido.");
+			return listaResposta;
+		}
+		
+		if (autor.getEmail ().isBlank () )
+		{
+			listaResposta.addMsg( "Email não preenchido.");
+			return listaResposta;
+		}
+		
+		for (Autor autorAux: getAutores())
+		{
+			if (autorAux.getNome().equals(autor.getNome()))
+			{
+				listaResposta.addMsg( "Já existe um autor com este nome.");
+				return listaResposta;
+			}
+		}
+	
+		Editora editora = editoraRepository.findById(Long.parseLong (editora_id)).get();
+		
+		autor.setEditora(editora);
+		
+		autor.setAtivo(true);
+		
 		autorRepository.save (autor);
-		return "";
+		listaResposta.setNewID(autor.getId());
+		listaResposta.setStatusOk(true);
+		return listaResposta;
 	}
 
 	
