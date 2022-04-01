@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -36,10 +37,12 @@ public class Livro
 	
 	private int num_paginas;
 	
+	@Column (columnDefinition="text", length=1000)
 	private String sinopse;
 
 	private String edicao;
 	
+	@Lob
 	private String imagem_capa;
 	
 	private boolean ativo;
