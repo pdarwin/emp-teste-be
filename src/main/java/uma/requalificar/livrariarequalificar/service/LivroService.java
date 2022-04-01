@@ -1,7 +1,10 @@
 package uma.requalificar.livrariarequalificar.service;
 
+import static java.lang.Long.parseLong;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,16 @@ public class LivroService
 		return livros;
 	}
 
+	public Optional<Livro> getLivroById(String id)
+	{
+		try
+		{
+			return livroRepository.findById(parseLong(id));
+		} catch (NumberFormatException e)
+		{
+			return null;
+		}
+	}
 
 	public ListaResposta addLivro (Livro livro)
 	{
@@ -91,7 +104,7 @@ public class LivroService
 				return listaResposta;
 			}
 		}
-
+		
 		livro.setAtivo(true);
 		
 		livroRepository.save (livro);

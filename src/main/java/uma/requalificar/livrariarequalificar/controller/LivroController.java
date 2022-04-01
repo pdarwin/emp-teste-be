@@ -1,12 +1,14 @@
 package uma.requalificar.livrariarequalificar.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,6 +39,28 @@ public class LivroController
 		return livroService.getLivros ();
     }
    
+    
+    @GetMapping("/getLivroById/{id}")
+    public ResponseEntity<ListaResposta> getLivroById (@PathVariable String id){
+
+    	ListaResposta listaResposta = new ListaResposta();
+    	
+		if (id.isBlank())
+		{
+			listaResposta.addMsg ("O ID do livro não pode ser nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
+		}
+
+        Optional<Livro> livroOptional = livroService.getLivroById(id);
+
+        if (livroOptional.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(listaResposta);
+        }else{
+        	listaResposta.setStatusOk(true);
+        	listaResposta.setOptional(livroOptional);
+            return ResponseEntity.status(HttpStatus.OK).body(listaResposta);
+        }
+    }
     
     @PostMapping ("/addLivro")
 	@CrossOrigin

@@ -1,10 +1,12 @@
 package uma.requalificar.livrariarequalificar.dto;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ListaResposta extends SimpleResponse
 {
 	private List<?> lista;
+	private Optional<?> optional;
 	private long newID;
 	
 	/**
@@ -38,6 +40,22 @@ public class ListaResposta extends SimpleResponse
 	 */
 	public void setNewID(long newID) {
 		this.newID = newID;
+	}
+
+
+	/**
+	 * @return the optional
+	 */
+	public Optional<?> getOptional() {
+		return optional;
+	}
+
+
+	/**
+	 * @param optional the optional to set
+	 */
+	public void setOptional(Optional<?> optional) {
+		this.optional = optional;
 	}
 	
 
