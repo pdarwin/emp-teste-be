@@ -51,13 +51,13 @@ public class LivroController
 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 
-        Optional<Livro> livroOptional = livroService.getLivroById(id);
+        listaResposta = livroService.getLivroById(id);
 
-        if (livroOptional.isEmpty()){
+        if (listaResposta.getOptional().isEmpty()){
+        	listaResposta.addMsg ("Livro não encontrado.");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(listaResposta);
         }else{
         	listaResposta.setStatusOk(true);
-        	listaResposta.setOptional(livroOptional);
             return ResponseEntity.status(HttpStatus.OK).body(listaResposta);
         }
     }

@@ -1,7 +1,10 @@
 package uma.requalificar.livrariarequalificar.service;
 
+import static java.lang.Long.parseLong;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Service;
 import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Autor;
 import uma.requalificar.livrariarequalificar.model.Editora;
+import uma.requalificar.livrariarequalificar.model.Livro;
 import uma.requalificar.livrariarequalificar.repository.AutorRepository;
 import uma.requalificar.livrariarequalificar.repository.EditoraRepository;
 
@@ -32,7 +36,6 @@ public class AutorService
 
 		return autores;
 	}
-
 	
 	public ListaResposta addAutor (Autor autor, String editora_id) 
 	{
@@ -71,6 +74,7 @@ public class AutorService
 		return listaResposta;
 	}
 
+	
 	
 /*	public String deleteAutor (String id) 
  * {
