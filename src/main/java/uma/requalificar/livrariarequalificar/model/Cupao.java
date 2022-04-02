@@ -24,7 +24,6 @@ public class Cupao
 	private int desconto; // em percentagem, sobre o preço do livro
 	
 	private boolean ativo;
-
 	
 	@ManyToOne
 	@JsonIgnore

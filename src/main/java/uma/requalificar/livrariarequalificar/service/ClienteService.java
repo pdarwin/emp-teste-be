@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Cliente;
 import uma.requalificar.livrariarequalificar.repository.ClienteRepository;
 import uma.requalificar.livrariarequalificar.utils.Utils;
@@ -71,13 +72,23 @@ public class ClienteService
 		return "";
 	}
 	
-	public String validateCliente (Cliente cliente)
+	public ListaResposta loginCliente (Cliente cliente)
 	{
+		
+		ListaResposta listaResposta = new ListaResposta ();
+		
 		if (cliente.getEmail ().isBlank () )
-			return "Email não preenchido.";
+		{
+			listaResposta.addMsg("Email não preenchido.");
+			return listaResposta;
+		}
+			
 		
 		if (cliente.getPassword ().isBlank () )
-			return "Palavra-passe não preenchida.";
+		{
+			listaResposta.addMsg("Palavra-passe não preenchida.");
+			return listaResposta;
+		}
 		
 		for (Cliente clienteAux : getClientes())
 		{
@@ -87,19 +98,27 @@ public class ClienteService
 				BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 				if (!passwordEncoder.matches(cliente.getPassword(), clienteAux.getPassword()))
 				{
-					return "Palavra-passe errada.";
+					listaResposta.addMsg("Palavra-passe errada.");
+					return listaResposta;
 				}
 				else if (!clienteAux.isAtivo())
 				{
-					return "Cliente inativo.";
+					listaResposta.addMsg("Cliente inativo.");
+					return listaResposta;
 				}
-				else return "";
+				else
+				{
+					listaResposta.setNewID(clienteAux.getId());
+					listaResposta.setStatusOk(true);
+					return listaResposta;
+				}
 
 			}
 			
 		}
 	
-		return "Email não encontrado";
+		listaResposta.addMsg("Email incorreto ou inexistente.");
+		return listaResposta;
 	}
 
 	public String validaEmail (String email)

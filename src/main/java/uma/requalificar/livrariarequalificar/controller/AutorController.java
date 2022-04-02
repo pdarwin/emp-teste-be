@@ -53,7 +53,7 @@ public class AutorController
 
 		if (editora_id == null || editora_id.isBlank () )
 		{
-			listaResposta.addMsg ("ID da Editora não preenchido.");
+			listaResposta.addMsg ("ID da editora não preenchido.");
 			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 

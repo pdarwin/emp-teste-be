@@ -37,35 +37,33 @@ public class ClienteController
 		return clienteService.getClientes ();
     }
     
-    @PostMapping ("/validateCliente")
+    @PostMapping ("/loginCliente")
 	@CrossOrigin
-    public ResponseEntity<ListaResposta> validateCliente (@RequestBody Cliente cliente)
+    public ResponseEntity<ListaResposta> loginCliente (@RequestBody Cliente cliente)
     {
-    	ListaResposta sResponse = new ListaResposta ();
+    	ListaResposta listaResposta = new ListaResposta ();
     	
 		if ( (cliente.getEmail () == null) )
 		{
-			sResponse.addMsg ("Email nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			listaResposta.addMsg ("Email nulo.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
 		
 		if ( (cliente.getPassword () == null) )
 		{
-			sResponse.addMsg ("Password nula.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			listaResposta.addMsg ("Password nula.");
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		}
     	
-		String msg = clienteService.validateCliente (cliente);
+		listaResposta = clienteService.loginCliente (cliente);
 		
-		if (!msg.isBlank () )
+		if (!listaResposta.isStatusOk() )
 		{
-			sResponse.addMsg (msg);
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (sResponse);
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
 		} 
 		else
 		{
-			sResponse.setStatusOk (true);
-			return ResponseEntity.status (HttpStatus.OK).body (sResponse);
+			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
 		}
     }
     
@@ -122,7 +120,6 @@ public class ClienteController
 		else
 		{
 			simpleResponse.setStatusOk (true);
-			simpleResponse.setLista (clienteService.getClientes () );
 			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
 		}
 

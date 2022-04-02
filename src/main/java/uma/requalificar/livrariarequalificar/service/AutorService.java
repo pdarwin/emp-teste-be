@@ -63,7 +63,6 @@ public class AutorService
 		}
 	
 		Editora editora = editoraRepository.findById(Long.parseLong (editora_id)).get();
-		
 		autor.setEditora(editora);
 		
 		autor.setAtivo(true);
