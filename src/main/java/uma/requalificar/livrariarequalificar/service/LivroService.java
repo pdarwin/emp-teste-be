@@ -21,6 +21,7 @@ public class LivroService {
 	public LivroService(LivroRepository livroRepository) {
 		this.livroRepository = livroRepository;
 	}
+	
 
 	public List<Livro> getLivros() {
 		List<Livro> livros = new ArrayList<>();
@@ -28,7 +29,8 @@ public class LivroService {
 
 		return livros;
 	}
-
+	
+	
 	public ListaResposta getLivroById(String id) {
 		ListaResposta listaResposta = new ListaResposta();
 
@@ -40,7 +42,9 @@ public class LivroService {
 			return listaResposta;
 		}
 	}
-
+	
+	// Regras de Negócio
+	
 	public ListaResposta addLivro(Livro livro) {
 		ListaResposta listaResposta = new ListaResposta();
 

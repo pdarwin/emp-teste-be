@@ -26,6 +26,7 @@ public class EditoraService
 		this.editoraRepository = editoraRepository;
 	}
 	
+	
 	public List<Editora> getEditoras ()
 	{
 		List<Editora> editoras = new ArrayList<> ();
@@ -33,7 +34,8 @@ public class EditoraService
 
 		return editoras;
 	}
-
+	
+	// Regras de Negócio
 	
 	public ListaResposta addEditora (Editora editora) 
 	{
@@ -68,7 +70,7 @@ public class EditoraService
 		return listaResposta;
 	}
 	
-	// Estou a passar o update como se fosse um delete!!! Mudar?!
+	
 	public ListaResposta  updateEditora (String id) 
 	{
 		ListaResposta listaResposta = new ListaResposta(); 

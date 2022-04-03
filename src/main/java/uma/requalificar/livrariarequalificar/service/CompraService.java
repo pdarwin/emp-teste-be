@@ -38,6 +38,8 @@ public class CompraService {
 
 		return compras;
 	}
+	
+	// Regras de Negócio
 
 	public ListaResposta getComprasByClienteId(String cliente_id) {
 		ListaResposta listaResposta = new ListaResposta();

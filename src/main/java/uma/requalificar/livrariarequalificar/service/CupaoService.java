@@ -21,6 +21,7 @@ public class CupaoService
 		this.cupaoRepository = cupaoRepository;
 	}
 	
+	
 	public List<Cupao> getCupoes ()
 	{
 		List<Cupao> cupoes = new ArrayList<> ();
@@ -28,6 +29,8 @@ public class CupaoService
 
 		return cupoes;
 	}
+	
+	// Regras de Negócio
 
 	
 }
