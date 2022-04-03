@@ -1,5 +1,7 @@
 package uma.requalificar.livrariarequalificar.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,22 +14,22 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table (name = "Compra")
-public class Compra
-{
-	
+@Table(name = "Compra")
+public class Compra {
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column (name = "id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	private Long id;
-	
-	
+
 	@ManyToOne
 	@JsonIgnore
-	@JoinColumn (name = "cliente_id", nullable = false)
+	@JoinColumn(name = "cliente_id", nullable = false)
 	private Cliente cliente;
 
 	private double valor;
+
+	private Date data;
 
 	/**
 	 * @return the cliente
@@ -63,6 +65,19 @@ public class Compra
 	public Long getId() {
 		return id;
 	}
-	
-	
+
+	/**
+	 * @return the data
+	 */
+	public Date getData() {
+		return data;
+	}
+
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(Date data) {
+		this.data = data;
+	}
+
 }
