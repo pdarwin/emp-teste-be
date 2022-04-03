@@ -22,13 +22,16 @@ public class ClienteService {
 	public ClienteService(ClienteRepository clienteRepository) {
 		this.clienteRepository = clienteRepository;
 	}
-
+	
+	
 	public List<Cliente> getClientes() {
 		List<Cliente> clientes = new ArrayList<>();
 		clienteRepository.findAll().forEach(clientes::add);
 
 		return clientes;
 	}
+	
+	// Regras de Negócio
 
 	public ListaResposta addCliente(Cliente cliente) {
 		ListaResposta listaResposta = new ListaResposta();

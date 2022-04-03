@@ -29,6 +29,7 @@ public class AutorService
 		this.editoraRepository = editoraRepository;
 	}
 	
+	
 	public List<Autor> getAutores ()
 	{
 		List<Autor> autores = new ArrayList<> ();
@@ -36,6 +37,8 @@ public class AutorService
 
 		return autores;
 	}
+	
+	// Regras de Negócio
 	
 	public ListaResposta addAutor (Autor autor, String editora_id) 
 	{

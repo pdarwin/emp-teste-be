@@ -22,6 +22,7 @@ public class FuncionarioService {
 	public FuncionarioService(FuncionarioRepository funcionarioRepository) {
 		this.funcionarioRepository = funcionarioRepository;
 	}
+	
 
 	public List<Funcionario> getFuncionarios() {
 		List<Funcionario> funcionarios = new ArrayList<>();
@@ -29,6 +30,8 @@ public class FuncionarioService {
 
 		return funcionarios;
 	}
+	
+	// Regras de Negócio
 
 	public ListaResposta addFuncionario(Funcionario funcionario) {
 		ListaResposta listaResposta = new ListaResposta();

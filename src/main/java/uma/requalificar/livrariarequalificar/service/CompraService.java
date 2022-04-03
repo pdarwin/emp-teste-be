@@ -29,6 +29,7 @@ public class CompraService
 		this.clienteRepository = clienteRepository;
 	}
 	
+	
 	public List<Compra> getCompras ()
 	{
 		List<Compra> compras = new ArrayList<> ();
@@ -36,6 +37,8 @@ public class CompraService
 
 		return compras;
 	}
+	
+	// Regras de Negócio
 
 	public ListaResposta addCompra (Compra compra, String cliente_id) 
 	{
