@@ -3,6 +3,7 @@ package uma.requalificar.livrariarequalificar.service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -65,7 +66,7 @@ public class FuncionarioService {
 
 		funcionario.setAtivo(true);
 
-		String username =genUsername(funcionario.getNome());
+		String username = genUsername(funcionario.getNome());
 		funcionario.setUsername(username);
 
 		funcionarioRepository.save(funcionario);
@@ -116,14 +117,22 @@ public class FuncionarioService {
 	private String genUsername(String username) {
 
 		String usernameAux;
+
 		if (username.indexOf(" ") > 0) {
 			usernameAux = username.substring(0, username.indexOf(" "));
 		} else {
-			usernameAux = username + "1";
+			// Gera um random entre 0 e 9
+			Random rand = new Random();
+			int x = rand.nextInt(10);
+
+			// acrescenta o random ao username, e prossegue com a testagem
+			usernameAux = username + x;
 		}
 
 		for (Funcionario funcionario : getFuncionarios()) {
 			if (funcionario.getUsername().equals(usernameAux)) {
+				// Já existindo um utilizador com este username, prossegue a testagem
+				// recursivamente
 				return genUsername(usernameAux);
 
 			}
