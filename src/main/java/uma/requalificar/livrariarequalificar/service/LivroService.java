@@ -98,6 +98,10 @@ public class LivroService {
 				listaResposta.addMsg("Já existe um livro com este título.");
 				return listaResposta;
 			}
+			if (livroAux.getIsbn().equals(livro.getIsbn())) {
+				listaResposta.addMsg("Já existe um livro com este ISBN.");
+				return listaResposta;
+			}
 		}
 
 		livro.setAtivo(true);

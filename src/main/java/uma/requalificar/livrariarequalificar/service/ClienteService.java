@@ -69,7 +69,8 @@ public class ClienteService {
 				return listaResposta;
 			}
 		}
-
+		
+		//Teste data nascimento
 		LocalDate dataMaxima = LocalDate.now();
 
 		LocalDate dataMinima = dataMaxima.minusYears(120);
