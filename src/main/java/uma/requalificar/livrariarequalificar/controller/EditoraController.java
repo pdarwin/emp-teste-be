@@ -82,24 +82,20 @@ public class EditoraController
 	}
     
     
-    @CrossOrigin
-    @PutMapping ("/updateEditora/{id}")
-    public ResponseEntity<SimpleResponse> updateEmpresa (@PathVariable String id)
-    {
-        
-        ListaResposta listaResposta = editoraService.updateEditora (id);
-
-        if (!listaResposta.isStatusOk() )
-		{
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
-		} 
-		else
-		{
-			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
-		}
-
-	}
-  
+	/*
+	 * @CrossOrigin
+	 * 
+	 * @PutMapping ("/updateEditora/{id}") public ResponseEntity<SimpleResponse>
+	 * updateEmpresa (@PathVariable String id) {
+	 * 
+	 * ListaResposta listaResposta = editoraService.updateEditora (id);
+	 * 
+	 * if (!listaResposta.isStatusOk() ) { return ResponseEntity.status
+	 * (HttpStatus.BAD_REQUEST).body (listaResposta); } else { return
+	 * ResponseEntity.status (HttpStatus.OK).body (listaResposta); }
+	 * 
+	 * }
+	 */
     
     @CrossOrigin
     @DeleteMapping ("/deleteEditora/{id}")
