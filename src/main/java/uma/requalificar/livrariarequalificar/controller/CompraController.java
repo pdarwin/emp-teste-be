@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import uma.requalificar.livrariarequalificar.dto.ListaResposta;
 import uma.requalificar.livrariarequalificar.model.Compra;
-import uma.requalificar.livrariarequalificar.model.Editora;
 import uma.requalificar.livrariarequalificar.service.CompraService;
 
 @RestController

@@ -1,6 +1,8 @@
 package uma.requalificar.livrariarequalificar.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,6 +30,11 @@ public class Compra {
 	@JsonIgnore
 	@JoinColumn(name = "cliente_id", nullable = false)
 	private Cliente cliente;
+
+	@ManyToMany
+	@JoinTable(name = "Compra_Livro", joinColumns = { @JoinColumn(name = "compra_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "livro_id") })
+	List<Livro> livros = new ArrayList<>();
 
 	private double valor;
 
@@ -78,6 +87,20 @@ public class Compra {
 	 */
 	public void setData(Date data) {
 		this.data = data;
+	}
+
+	/**
+	 * @return the livros
+	 */
+	public List<Livro> getLivros() {
+		return livros;
+	}
+
+	/**
+	 * @param livros the livros to set
+	 */
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
 	}
 
 }

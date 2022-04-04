@@ -87,6 +87,11 @@ public class LivroService {
 			listaResposta.addMsg("Tem de escolher pelo menos um autor.");
 			return listaResposta;
 		}
+		
+		if (livro.getStock() < 0) {
+			listaResposta.addMsg("O valor em stock tem de ser 0 ou mais livros.");
+			return listaResposta;
+		}
 
 		for (Livro livroAux : getLivros()) {
 			if (livroAux.getTitulo().equals(livro.getTitulo())) {
