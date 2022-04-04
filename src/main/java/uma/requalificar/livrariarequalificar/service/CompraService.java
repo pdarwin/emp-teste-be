@@ -111,6 +111,7 @@ public class CompraService {
 			cupao.setCliente(cliente);
 			int desconto = (compra.getValor() < 100) ? 5 : 15;
 			cupao.setDesconto(desconto);
+			cupao.setAtivo(true);
 			cupaoRepository.save(cupao);
 		}
 

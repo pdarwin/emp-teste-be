@@ -8,9 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import uma.requalificar.livrariarequalificar.dto.ListaResposta;
+import uma.requalificar.livrariarequalificar.dto.SimpleResponse;
 import uma.requalificar.livrariarequalificar.model.Cupao;
 import uma.requalificar.livrariarequalificar.service.CupaoService;
 
@@ -50,6 +52,24 @@ public class CupaoController
 
 		listaResposta.setStatusOk(true);
 		return ResponseEntity.status(HttpStatus.OK).body(listaResposta);
+
+	}
+    
+    @CrossOrigin
+    @PutMapping ("/remCupao/{id}")
+    public ResponseEntity<SimpleResponse> remCupao (@PathVariable String id)
+    {
+        
+        ListaResposta listaResposta = cupaoService.remCupao (id);
+
+        if (!listaResposta.isStatusOk() )
+		{
+			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
+		} 
+		else
+		{
+			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
+		}
 
 	}
 
