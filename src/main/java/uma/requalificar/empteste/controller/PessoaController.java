@@ -31,11 +31,11 @@ public class PessoaController
 	}
 
 	
-    @GetMapping ("/getPessoas")
+    @GetMapping ("/getPessoasByEmpresa/{empresa_id}")
 	@CrossOrigin
-    public List<Pessoa> getPessoas ()
+    public List<Pessoa> getPessoasByEmpresa (@PathVariable String empresa_id)
     {
-		return pessoaService.getPessoas ();
+		return pessoaService.getPessoasByEmpresa (empresa_id);
     }
     
     

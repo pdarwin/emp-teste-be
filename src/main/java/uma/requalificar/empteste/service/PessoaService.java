@@ -1,5 +1,6 @@
 package uma.requalificar.empteste.service;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,12 @@ public class PessoaService {
 
 		return pessoas;
 	}
+	
+	public List<Pessoa> getPessoasByEmpresa(String empresa_id) {
+
+		return empresaRepository.findById(Long.parseLong(empresa_id)).get().getPessoas();
+		
+	}
 
 	// Regras de Negócio
 
@@ -47,7 +54,7 @@ public class PessoaService {
 
 		for (Pessoa pessoaAux : getPessoas()) {
 			if (pessoaAux.getNome().equals(pessoa.getNome())) {
-				listaResposta.addMsg("Já existe um pessoa com este nome.");
+				listaResposta.addMsg("Já existe uma pessoa com este nome.");
 				return listaResposta;
 			}
 
