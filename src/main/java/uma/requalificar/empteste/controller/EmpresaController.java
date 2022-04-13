@@ -18,69 +18,67 @@ import uma.requalificar.empteste.dto.SimpleResponse;
 import uma.requalificar.empteste.model.Empresa;
 import uma.requalificar.empteste.service.EmpresaService;
 
-
 @RestController
 @CrossOrigin
-public class EmpresaController 
-{
+public class EmpresaController {
 	private final EmpresaService empresaService;
 
-	
 	@Autowired
-	public EmpresaController (EmpresaService empresaService)
-	{
+	public EmpresaController(EmpresaService empresaService) {
 		this.empresaService = empresaService;
 	}
 
-	
-    @GetMapping ("/getEmpresas")
+	@GetMapping("/getEmpresas")
 	@CrossOrigin
-    public List<Empresa> getEmpresas ()
-    {
-		return empresaService.getEmpresas ();
-    }
+	public List<Empresa> getEmpresas() {
+		return empresaService.getEmpresas();
+	}
 
-    
-    @PostMapping ("/addEmpresa")
-    @CrossOrigin
-	public ResponseEntity<ListaResposta> addEmpresa (@RequestBody Empresa empresa)
-	{
+	@PostMapping("/addEmpresa")
+	@CrossOrigin
+	public ResponseEntity<ListaResposta> addEmpresa(@RequestBody Empresa empresa) {
 
-		ListaResposta listaResposta = new ListaResposta ();
+		ListaResposta listaResposta = new ListaResposta();
 
-		if (empresa.getId () != null)
-		{
-			listaResposta.addMsg ("Ao adicionar um item, o ID tem de ser nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
+		if (empresa.getId() != null) {
+			listaResposta.addMsg("Ao adicionar um item, o ID tem de ser nulo.");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listaResposta);
 		}
 
-		if ( (empresa.getNome () == null) )
-		{
-			listaResposta.addMsg ("Nome nulo.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
-		}
-		
-		if ( (empresa.getMorada () == null) )
-		{
-			listaResposta.addMsg ("Morada nula.");
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
+		if ((empresa.getNome() == null)) {
+			listaResposta.addMsg("Nome nulo.");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listaResposta);
 		}
 
-		
-		listaResposta = empresaService.addEmpresa (empresa);
+		if ((empresa.getMorada() == null)) {
+			listaResposta.addMsg("Morada nula.");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listaResposta);
+		}
 
-		if (!listaResposta.isStatusOk() )
-		{
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (listaResposta);
-		} 
-		else
-		{
-			return ResponseEntity.status (HttpStatus.OK).body (listaResposta);
+		listaResposta = empresaService.addEmpresa(empresa);
+
+		if (!listaResposta.isStatusOk()) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listaResposta);
+		} else {
+			return ResponseEntity.status(HttpStatus.OK).body(listaResposta);
 		}
 
 	}
-    
-    
+
+	@CrossOrigin
+	@DeleteMapping("/removeEmpresa/{id}")
+	public ResponseEntity<SimpleResponse> removeEmpresa(@PathVariable String id) {
+
+		ListaResposta listaResposta = empresaService.removeEmpresa(id);
+
+		if (!listaResposta.isStatusOk()) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listaResposta);
+		} else {
+			return ResponseEntity.status(HttpStatus.OK).body(listaResposta);
+		}
+
+	}
+
 	/*
 	 * @CrossOrigin
 	 * 
@@ -95,29 +93,5 @@ public class EmpresaController
 	 * 
 	 * }
 	 */
-    
-    @CrossOrigin
-    @DeleteMapping ("/deleteEmpresa/{id}")
-	public ResponseEntity<SimpleResponse> removeEmpresa (@PathVariable String id)
-	{
 
-		SimpleResponse simpleResponse = new SimpleResponse ();
-
-		String msg = empresaService.deleteEmpresa (id);
-
-		if (!msg.isBlank () )
-		{
-			simpleResponse.addMsg (msg);
-			return ResponseEntity.status (HttpStatus.BAD_REQUEST).body (simpleResponse);
-		} 
-		else
-		{
-			simpleResponse.setStatusOk (true);
-			return ResponseEntity.status (HttpStatus.OK).body (simpleResponse);
-		}
-
-	}
-        
-    
-    
 }
