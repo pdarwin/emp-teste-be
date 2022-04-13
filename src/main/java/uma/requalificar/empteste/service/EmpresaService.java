@@ -45,11 +45,9 @@ public class EmpresaService {
 			return listaResposta;
 		}
 
-		for (Empresa empresaAux : getEmpresas()) {
-			if (empresaAux.getNome().equals(empresa.getNome())) {
-				listaResposta.addMsg("Já existe uma empresa com este nome.");
-				return listaResposta;
-			}
+		if (empresaRepository.findByNome(empresa.getNome()).size() > 0) {
+			listaResposta.addMsg("Já existe uma empresa com este nome.");
+			return listaResposta;
 		}
 
 		empresaRepository.save(empresa);
